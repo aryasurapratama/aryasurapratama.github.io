@@ -86,3 +86,18 @@ Verifikasi Playwright/Chromium:
 - Tidak ditemukan galat JavaScript atau kegagalan aset dalam pemeriksaan halaman utama. `npm run check` dan `npm run build` lulus. Screenshot desktop serta ponsel ditinjau secara visual.
 
 Catatan bagian audit sebelumnya merekam versi halaman tunggal. Struktur saat ini menggunakan halaman terpisah. Pengujian ini menggunakan Chromium dan pemeriksaan otomatis; hasilnya bukan penilaian mutlak untuk seluruh perangkat atau pengguna.
+
+## Perluasan isi seluruh menu
+
+- Beranda memuat ikhtisar aktivitas, panduan penelusuran, dan jalur menuju kontak. Profil memuat biografi, identitas profesional, pengajaran TIK, hubungan bidang aktivitas, dan profil ilmiah resmi. Konfirmasi pengajaran TIK diberikan langsung oleh pemilik.
+- Pendidikan memuat perjalanan S1–S2, konteks tesis, serta hubungan latar pendidikan dengan aktivitas akademik dan pengembangan. Penelitian memuat bidang kajian, tiga ringkasan publikasi, panel metode/konteks, DOI, dan jalur diskusi penelitian.
+- Karya memuat bidang pengembangan yang tercantum pada GitHub, lingkup layanan SoftKlinik, tahapan pengembangan, dan ekosistem teknologi tim. Daftar teknologi dikaitkan dengan SoftKlinik. Kontak memuat jenis percakapan, panduan informasi awal, penyusun pesan, dan FAQ.
+- Isi tersedia dalam Indonesia dan English. Setiap halaman tetap memiliki satu bagian utama dan satu `h1`; daftar isi dan tautan antarhalaman membantu penelusuran. Panel metode serta FAQ menggunakan elemen `details`/`summary` bawaan browser. Tabel teknologi ditampilkan sebagai baris yang mudah dibaca pada ponsel.
+- Penyusun pesan melakukan validasi, menampilkan teks pratinjau, dan membentuk URL WhatsApp dengan pesan yang dikodekan. Perubahan isian menyembunyikan pratinjau lama. Pilihan topik diteruskan saat berganti bahasa. Tanpa JavaScript, panduan kontak, tautan WhatsApp, dan FAQ tersedia.
+- Tombol kembali ke atas ditempatkan dalam landmark footer agar terjangkau secara semantik ketika tampil mengambang. Sumber konten dan batas interpretasinya dicatat pada [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
+
+Verifikasi Chromium mencakup 96 pemeriksaan layout pada seluruh halaman dengan lebar 320, 390, 620, 768, 860, 1024, 1025, dan 1440px; navigasi menu, riwayat browser, pergantian bahasa, tautan daftar isi, ID unik, serta panel metode/FAQ. Navigasi tanpa JavaScript lulus pada 320, 1024, dan 1440px. Pemeriksaan pembesaran teks, menu landscape, fokus keyboard, dan ikon kembali ke atas juga lulus.
+
+Delapan alur formulir pada kedua bahasa dan empat lebar layar menguji isian wajib, spasi kosong, pratinjau, fokus, teks khusus/Unicode, URL pesan, perubahan isian, organisasi opsional, dan kesinambungan topik saat berpindah bahasa. Pemeriksaan hanya menyiapkan tautan pesan; tidak mengirim percakapan. Dua halaman kontak tanpa JavaScript beserta FAQ diperiksa terpisah.
+
+Sebanyak 44 pemindaian axe pada keadaan halaman awal, panel terbuka, ikon mengambang terlihat, dan pratinjau formulir tidak menemukan pelanggaran pada aturan yang diuji. Tidak ditemukan galat JavaScript atau kegagalan aset dalam pengujian halaman utama. Screenshot desktop dan ponsel ditinjau. `npm run check` dan `npm run build` lulus.

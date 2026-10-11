@@ -30,9 +30,10 @@
     />
 
     <link rel="stylesheet" href="/assets/fonts.css" />
-    <link rel="stylesheet" href="/assets/style.css?v=11" />
+    <link rel="stylesheet" href="/assets/style.css?v=12" />
     <noscript><link rel="stylesheet" href="/assets/no-js.css?v=6" /></noscript>
     <script src="/assets/main.js?v=6" defer></script>
+    <script src="/assets/contact.js?v=1" defer></script>
     <title>Kontak | Arya Sura Pratama, M.Kom.</title>
     <script type="application/ld+json">
       {
@@ -74,6 +75,7 @@
             ],
             "knowsAbout": [
               "Ilmu Komputer",
+              "Teknologi Informasi dan Komunikasi",
               "Pengembangan web",
               "Pengembangan perangkat lunak"
             ],
@@ -155,12 +157,8 @@
       </div>
     </header>
     <main id="main" tabindex="-1">
-      <section
-        id="kontak"
-        class="contact-section section-pad"
-        aria-labelledby="contact-title"
-      >
-        <div class="container contact-layout">
+      <section id="kontak" class="contact-section" aria-labelledby="contact-title">
+        <div class="container contact-layout section-pad">
           <div class="contact-copy">
             <p class="section-label">KONTAK</p>
             <h1 class="page-title" id="contact-title">
@@ -225,22 +223,291 @@
             >
           </div>
         </div>
+        <div class="contact-more section-pad">
+          <div class="container content-stack">
+            <nav class="page-index" aria-label="Daftar isi halaman">
+              <span>DI HALAMAN INI</span>
+              <div>
+                <a href="#conversation-title">Topik percakapan</a
+                ><a href="#brief-title">Siapkan pesan</a
+                ><a href="#contact-faq-title">Pertanyaan umum</a>
+              </div>
+            </nav>
+            <div class="content-block" aria-labelledby="conversation-title">
+              <div class="block-header">
+                <div>
+                  <h2 id="conversation-title">Pilih konteks percakapan.</h2>
+                  <p>
+                    Informasi awal yang tepat membantu percakapan akademik maupun
+                    pengembangan produk menjadi lebih terarah.
+                  </p>
+                </div>
+              </div>
+              <div class="editorial-grid columns-3">
+                <article class="editorial-card">
+                  <div class="card-icon">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-academic" />
+                    </svg>
+                  </div>
+                  <h3>Akademik & pengajaran TIK</h3>
+                  <p>
+                    Sampaikan topik diskusi, konteks institusi, dan kebutuhan terkait
+                    Teknologi Informasi dan Komunikasi dalam pendidikan.
+                  </p>
+                </article>
+                <article class="editorial-card">
+                  <div class="card-icon">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-book" />
+                    </svg>
+                  </div>
+                  <h3>Kolaborasi penelitian</h3>
+                  <p>
+                    Jelaskan masalah penelitian, tema, konteks kajian, serta
+                    kontribusi yang ingin dibicarakan. Tautan publikasi atau ringkasan
+                    proposal dapat membantu.
+                  </p>
+                </article>
+                <article class="editorial-card">
+                  <div class="card-icon">
+                    <svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-code" />
+                    </svg>
+                  </div>
+                  <h3>Web & perangkat lunak</h3>
+                  <p>
+                    Ceritakan masalah pengguna, gambaran produk, fitur utama, dan
+                    target yang ingin dicapai. Kebutuhan awal menjadi dasar pembahasan
+                    ruang lingkup.
+                  </p>
+                </article>
+              </div>
+            </div>
+            <div class="content-block" aria-labelledby="brief-title">
+              <div class="block-header">
+                <div>
+                  <h2 id="brief-title">Siapkan pesan yang jelas.</h2>
+                  <p>
+                    Gunakan tiga langkah berikut sebagai panduan, atau susun pesan
+                    melalui formulir untuk dibuka di WhatsApp.
+                  </p>
+                </div>
+              </div>
+              <div class="editorial-grid columns-3">
+                <article class="editorial-card">
+                  <h3>Perkenalkan diri</h3>
+                  <p>
+                    Tuliskan nama dan institusi atau organisasi agar konteks
+                    percakapan jelas.
+                  </p>
+                </article>
+                <article class="editorial-card">
+                  <h3>Sampaikan tujuan</h3>
+                  <p>
+                    Sebutkan apakah kebutuhan berkaitan dengan pengajaran, penelitian,
+                    atau pengembangan produk.
+                  </p>
+                </article>
+                <article class="editorial-card">
+                  <h3>Tambahkan konteks</h3>
+                  <p>
+                    Jelaskan masalah, kebutuhan utama, rencana waktu, dan bahan
+                    pendukung yang sudah tersedia.
+                  </p>
+                </article>
+              </div>
+              <div class="brief-panel" id="brief-panel" hidden>
+                <form id="contact-brief">
+                  <div class="brief-fields">
+                    <div class="form-field">
+                      <label for="brief-name">Nama Anda</label
+                      ><input
+                        id="brief-name"
+                        name="name"
+                        autocomplete="name"
+                        maxlength="80"
+                        required
+                      />
+                    </div>
+                    <div class="form-field">
+                      <label for="brief-organization"
+                        >Institusi / organisasi <span>(opsional)</span></label
+                      ><input
+                        id="brief-organization"
+                        name="organization"
+                        autocomplete="organization"
+                        maxlength="100"
+                      />
+                    </div>
+                    <div class="form-field full-width">
+                      <label for="brief-subject">Tujuan percakapan</label
+                      ><select id="brief-subject" name="subject">
+                        <option value="teaching">Pengajaran & TIK</option>
+                        <option value="research">Kolaborasi penelitian</option>
+                        <option value="development">Web & software</option>
+                      </select>
+                    </div>
+                    <div class="form-field full-width">
+                      <label for="brief-message">Ringkasan kebutuhan</label
+                      ><textarea
+                        id="brief-message"
+                        name="message"
+                        rows="5"
+                        maxlength="1600"
+                        aria-describedby="brief-hint"
+                        required
+                      ></textarea>
+                      <p id="brief-hint">
+                        Jelaskan masalah atau topik, tujuan, dan konteks yang perlu
+                        diketahui.
+                      </p>
+                    </div>
+                  </div>
+                  <button class="button button-primary" type="submit">
+                    Siapkan pesan WhatsApp<svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-right" />
+                    </svg>
+                  </button>
+                  <p class="form-note">
+                    Pesan disusun di perangkat Anda. Periksa ringkasannya sebelum
+                    melanjutkan ke WhatsApp.
+                  </p>
+                </form>
+                <div
+                  class="brief-preview"
+                  id="brief-preview"
+                  hidden
+                  role="region"
+                  aria-labelledby="brief-preview-title"
+                  tabindex="-1"
+                >
+                  <h3 id="brief-preview-title">Pratinjau pesan</h3>
+                  <p id="brief-preview-text"></p>
+                  <a
+                    class="button button-primary"
+                    id="brief-whatsapp"
+                    href="https://wa.me/6282232623434"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Lanjut ke WhatsApp<svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-arrow" /></svg
+                    ><span class="visually-hidden"> (tab baru)</span></a
+                  >
+                </div>
+              </div>
+              <noscript
+                ><p class="inline-note">
+                  Gunakan panduan di atas, lalu kirim pesan melalui tautan WhatsApp
+                  pada bagian kontak.
+                </p></noscript
+              >
+            </div>
+            <div class="content-block" aria-labelledby="contact-faq-title">
+              <div class="block-header">
+                <div><h2 id="contact-faq-title">Pertanyaan umum.</h2></div>
+              </div>
+              <div class="faq-list">
+                <details>
+                  <summary>
+                    Bagaimana memulai percakapan?<svg class="icon" aria-hidden="true">
+                      <use href="/assets/icons/ui.svg#icon-right" />
+                    </svg>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>
+                      Gunakan WhatsApp untuk percakapan langsung. Sertakan nama,
+                      konteks, dan tujuan Anda. Penyusun pesan di halaman ini membantu
+                      merapikan informasi awal sebelum membuka WhatsApp.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>
+                    Apa yang perlu disiapkan untuk diskusi proyek?<svg
+                      class="icon"
+                      aria-hidden="true"
+                    >
+                      <use href="/assets/icons/ui.svg#icon-right" />
+                    </svg>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>
+                      Siapkan gambaran masalah, calon pengguna, fitur yang paling
+                      penting, sistem yang sudah digunakan, dan rencana waktu. Dokumen
+                      kebutuhan, referensi tampilan, atau contoh alur kerja dapat
+                      membantu pembahasan.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>
+                    Bagaimana menyampaikan gagasan penelitian?<svg
+                      class="icon"
+                      aria-hidden="true"
+                    >
+                      <use href="/assets/icons/ui.svg#icon-right" />
+                    </svg>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>
+                      Tuliskan topik, pertanyaan penelitian, konteks atau objek
+                      kajian, serta bentuk kolaborasi yang ingin dibicarakan. Bila
+                      tersedia, tambahkan tautan publikasi yang relevan atau ringkasan
+                      proposal.
+                    </p>
+                  </div>
+                </details>
+                <details>
+                  <summary>
+                    Di mana saya dapat melihat profil dan karya ilmiah?<svg
+                      class="icon"
+                      aria-hidden="true"
+                    >
+                      <use href="/assets/icons/ui.svg#icon-right" />
+                    </svg>
+                  </summary>
+                  <div class="faq-answer">
+                    <p>
+                      Halaman Profil memuat identitas akademik dan tautan Google
+                      Scholar, SINTA, serta ORCID. Halaman Penelitian menyediakan
+                      ringkasan publikasi dan tautan ke penerbit, sedangkan tesis
+                      tersedia melalui halaman Pendidikan.
+                    </p>
+                  </div>
+                </details>
+              </div>
+            </div>
+            <div class="related-links">
+              <a class="text-link" href="/profil/"
+                >Profil akademik<svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons/ui.svg#icon-right" /></svg></a
+              ><a class="text-link" href="/penelitian/"
+                >Penelitian & publikasi<svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons/ui.svg#icon-right" /></svg></a
+              ><a class="text-link" href="/karya/"
+                >Karya & pengembangan<svg class="icon" aria-hidden="true">
+                  <use href="/assets/icons/ui.svg#icon-right" /></svg
+              ></a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="site-footer">
       <div class="container footer-inner">
         <p>© <span id="year">2026</span> Arya Sura Pratama, M.Kom.</p>
       </div>
+      <a
+        class="back-top"
+        href="#main"
+        aria-label="Kembali ke atas"
+        title="Kembali ke atas"
+      >
+        <svg class="icon" aria-hidden="true">
+          <use href="/assets/icons/ui.svg#icon-right" />
+        </svg>
+      </a>
     </footer>
-    <a
-      class="back-top"
-      href="#main"
-      aria-label="Kembali ke atas"
-      title="Kembali ke atas"
-    >
-      <svg class="icon" aria-hidden="true">
-        <use href="/assets/icons/ui.svg#icon-right" />
-      </svg>
-    </a>
   </body>
 </html>

@@ -31,14 +31,14 @@ export const pages = [
       label: "Profil",
       title: `Profil Akademik | ${name}`,
       description:
-        "Profil akademik Arya Sura Pratama, M.Kom., dosen tetap pada Program Studi Pendidikan Keagamaan Buddha, Jinarakkhita Buddhist College of Lampung.",
+        "Profil Arya Sura Pratama, M.Kom., dosen tetap Jinarakkhita Buddhist College of Lampung, pengampu Teknologi Informasi dan Komunikasi (TIK), dan pengembang web serta software.",
     },
     en: {
       path: "/en/profile/",
       label: "Profile",
       title: `Academic Profile | ${name}`,
       description:
-        "Academic profile of Arya Sura Pratama, M.Kom., a permanent lecturer in the Buddhist Religious Education Study Program at Jinarakkhita Buddhist College of Lampung.",
+        "Arya Sura Pratama, M.Kom., permanent lecturer at Jinarakkhita Buddhist College of Lampung, Information and Communication Technology (ICT) teacher, and web and software developer.",
     },
   },
   {
@@ -191,9 +191,15 @@ export async function generateSite() {
           name: institution,
         })),
         knowsAbout: english
-          ? ["Computer Science", "Web development", "Software development"]
+          ? [
+              "Computer Science",
+              "Information and Communication Technology",
+              "Web development",
+              "Software development",
+            ]
           : [
               "Ilmu Komputer",
+              "Teknologi Informasi dan Komunikasi",
               "Pengembangan web",
               "Pengembangan perangkat lunak",
             ],
@@ -217,6 +223,10 @@ export async function generateSite() {
         imagePreload:
           page.key === "home"
             ? '<link rel="preload" href="/assets/profile.jpg?v=3" as="image" />'
+            : "",
+        additionalScripts:
+          page.key === "contact"
+            ? '<script src="/assets/contact.js?v=1" defer></script>'
             : "",
         structuredData: JSON.stringify(
           {

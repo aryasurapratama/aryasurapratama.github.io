@@ -19,6 +19,10 @@ Tombol bahasa di header memakai ikon bendera SVG dari flag-icons: Indonesia untu
 
 Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi memakai tautan halaman biasa; menu aktif ditandai dengan warna, garis bawah, dan `aria-current="page"`. Pada ponsel, nama halaman terlihat di header. Tautan lama seperti `/#pendidikan` diarahkan ke halaman baru ketika JavaScript aktif.
 
+Setiap halaman mempunyai pembahasan tambahan sesuai tujuannya: ikhtisar dan panduan penelusuran di Beranda; biografi, pengajaran TIK, serta identitas ilmiah di Profil; perjalanan pendidikan dan konteks tesis di Pendidikan; bidang kajian, metode, ringkasan temuan, dan DOI di Penelitian; bidang pengembangan, layanan, proses kerja, serta ekosistem teknologi SoftKlinik di Karya; panduan percakapan, penyusun pesan, dan FAQ di Kontak. Daftar isi, panel metode, dan FAQ membantu penelusuran konten yang lebih panjang.
+
+Penyusun pesan pada halaman Kontak menampilkan pratinjau sebelum membuka WhatsApp dengan pesan terisi. Formulir mendukung konteks pengajaran, penelitian, dan pengembangan; pilihan topik dapat diteruskan ketika berganti bahasa. Panduan kontak, tautan WhatsApp, serta FAQ tetap tersedia tanpa JavaScript.
+
 Nama lengkap tampil pada judul utama dan copyright. Blok logo/nama yang berulang serta label pembuka di atas judul telah dihapus. WhatsApp, Instagram, dan GitHub memakai format baris kontak yang sama. Tombol kembali ke atas berupa ikon mengambang di kanan bawah, muncul setelah halaman digulir 300px, dan mengembalikan fokus ke judul utama saat digunakan. Tanpa JavaScript, tautan ikon tetap tersedia.
 
 Tipografi isi 16px, tombol minimal 48px, dan kontrol sentuh minimal 44px. Layout menyesuaikan lebar layar tanpa mengecilkan teks isi. Navigasi mendukung keyboard, penanda halaman aktif, dan menu yang dapat digulir pada layar landscape. Ringkasan audit tersedia di [UI_UX_AUDIT.md](UI_UX_AUDIT.md).
@@ -66,6 +70,7 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 - `index.html`, direktori halaman Indonesia, dan `en/`: HTML statis hasil generator. Edit sumber di `src/`, lalu jalankan `npm run generate`; jangan mengedit hasil generator langsung.
 - `assets/style.css`: tampilan desktop, tablet, dan seluler.
 - `assets/main.js`: menu ponsel, pengalihan tautan bagian lama, dan ikon kembali ke atas. Navigasi antarhalaman serta pergantian bahasa memakai tautan HTML.
+- `assets/contact.js`: validasi dan pratinjau pesan, tautan WhatsApp, serta kesinambungan topik saat berganti bahasa pada halaman Kontak.
 - `assets/profile.jpg`: foto formal terbaru yang diberikan oleh pemilik, disiapkan untuk web.
 - `assets/softklinik-preview.png`: tangkapan layar website resmi SoftKlinik.
 - `assets/icons/`: ikon asli merek, sprite SVG antarmuka, sumber, dan lisensi.
@@ -87,3 +92,5 @@ Publikasi pilihan ditautkan ke sumber penerbit; judul pada kedua versi bahasa me
 - [Tesis tata kelola TI dengan COBIT 2019 dan ITIL (2025)](https://repo.darmajaya.ac.id/23352/).
 
 Profil Google Scholar, SINTA, dan ORCID memakai ID yang diberikan pemilik. Situs tidak menampilkan angka sitasi, jumlah publikasi, atau klaim pelanggan yang belum terverifikasi.
+
+Pengajaran TIK dikonfirmasi oleh pemilik. Metode dan ringkasan penelitian berasal dari abstrak penerbit; bidang pengembangan berasal dari README publik GitHub; layanan dan alat teknologi berasal dari website SoftKlinik. Rincian atribusi tersedia pada [CONTENT_SOURCES.md](CONTENT_SOURCES.md).
