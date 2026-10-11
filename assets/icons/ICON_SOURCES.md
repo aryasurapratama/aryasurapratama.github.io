@@ -44,3 +44,14 @@ Official brand references recorded by Simple Icons:
 `orcid.svg` is downloaded unchanged from the [official ORCID source repository](https://github.com/ORCID/ORCID-Source/blob/2ba4d5bafcc248bf39bc3102eab3d8eb0b9ad9e8/orcid-web/src/main/webapp/static/img/id-icon.svg), pinned revision `2ba4d5bafcc248bf39bc3102eab3d8eb0b9ad9e8`. SHA-256: `26483c4d9c32c10f7d5a7dc895ede560696336d336dac582dc3c6a8b94500919`. The supplied green circle and white iD geometry are preserved.
 
 ORCID™, the ORCID logo, and the iD logo are trademarks of ORCID, Inc. Use follows [ORCID Brand Guidelines](https://info.orcid.org/brand-guidelines/) and [ORCID iD Display Guidelines](https://info.orcid.org/documentation/integration-guide/orcid-id-display-guidelines/): preserve the supplied artwork and colorway, keep an appropriate readable size, and link to the record holder's public profile. This local asset is a profile link mark and is not an assertion that an ORCID OAuth authentication workflow has been implemented.
+
+## Language flags: flag-icons
+
+Pinned upstream revision: `086f7e97d657358203916dbe84f61c2bccaa81eb`. The 4:3 Indonesian and United Kingdom SVG flags are downloaded unchanged from [flag-icons](https://github.com/lipis/flag-icons/tree/086f7e97d657358203916dbe84f61c2bccaa81eb). They identify the destination language on the language switch; accessible labels state the language explicitly.
+
+| File          | Source                                                                                                             | SHA-256                                                            |
+| ------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `flag-id.svg` | [Upstream SVG](https://github.com/lipis/flag-icons/blob/086f7e97d657358203916dbe84f61c2bccaa81eb/flags/4x3/id.svg) | `5cd3acc4939dd7eae6318c8d75df8c0d1733f650e2504a2635b0dbf3dfabb040` |
+| `flag-gb.svg` | [Upstream SVG](https://github.com/lipis/flag-icons/blob/086f7e97d657358203916dbe84f61c2bccaa81eb/flags/4x3/gb.svg) | `c8be1e7208798a4ae692ee1e937065d498bb29e741943f6172b29118b8ed8066` |
+
+The MIT license is preserved in [`FLAG_ICONS_LICENSE.txt`](FLAG_ICONS_LICENSE.txt).

@@ -48,7 +48,7 @@ Ikon SVG yang terlihat diperiksa agar benar-benar dirender, termasuk ikon penutu
 ## Bahasa Indonesia dan English
 
 - Konten lengkap tersedia pada `/` (Indonesia) dan `/en/` (English), termasuk navigasi, label aksesibilitas, deskripsi gambar, metadata, dan halaman 404.
-- Tombol EN/ID selalu terlihat di header, memiliki area sentuh 44px, dan mempertahankan bagian yang dibuka saat JavaScript aktif. Kedua versi tetap dapat dibaca dan dipilih tanpa JavaScript.
+- Tombol bahasa dengan ikon bendera SVG selalu terlihat di header, memiliki area sentuh 44px dan label bahasa bagi pembaca layar, serta mempertahankan bagian yang dibuka saat JavaScript aktif. Kedua versi tetap dapat dibaca dan dipilih tanpa JavaScript.
 - Nama **Arya Sura Pratama, M.Kom.**, gelar S.Kom./M.Kom., nama institusi, tahun pendidikan, dan tautan sumber tetap konsisten.
 - Kedua versi menggunakan canonical sendiri dan tautan `hreflang` timbal balik; sitemap memuat kedua alamat beserta alternatif bahasanya.
 

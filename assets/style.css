@@ -130,6 +130,13 @@ a {
   border-color: var(--blue);
   background: var(--pale);
 }
+.language-flag {
+  width: 24px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 2px;
+  outline: 1px solid #1425401a;
+}
 .not-found-header {
   display: flex;
   align-items: center;

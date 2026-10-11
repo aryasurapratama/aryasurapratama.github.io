@@ -14,7 +14,9 @@ if (location.pathname.startsWith("/en/")) {
   languageSwitch.href = "/404.html";
   languageSwitch.hreflang = "id";
   languageSwitch.lang = "id";
-  languageSwitch.textContent = "ID";
+  languageSwitch.querySelector(".language-label").textContent = "ID";
+  languageSwitch.querySelector(".language-flag").src =
+    "/assets/icons/flag-id.svg";
   languageSwitch.setAttribute("aria-label", "Ganti ke Bahasa Indonesia");
   languageSwitch.title = "Ganti ke Bahasa Indonesia";
 }

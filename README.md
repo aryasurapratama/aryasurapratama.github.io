@@ -4,7 +4,7 @@ Website personal **Arya Sura Pratama, M.Kom.**, dosen tetap di **Jinarakkhita Bu
 
 Situs: **https://aryasurapratama.github.io/**.
 
-Bahasa Indonesia tersedia di `/`, dan English di `/en/`. Tombol **EN / ID** di header berpindah bahasa sambil mempertahankan bagian yang sedang dibuka. Kedua halaman berisi konten lengkap tanpa JavaScript, dengan `lang`, canonical, metadata, dan tautan `hreflang` masing-masing. Nama pribadi, gelar resmi, dan nama institusi tetap dipertahankan.
+Bahasa Indonesia tersedia di `/`, dan English di `/en/`. Tombol bahasa di header memakai ikon bendera SVG dari flag-icons: Indonesia untuk beralih ke Bahasa Indonesia, dan United Kingdom untuk beralih ke English. Label EN/ID tetap tersedia bagi pembaca layar. Pergantian bahasa mempertahankan bagian yang sedang dibuka. Kedua halaman berisi konten lengkap tanpa JavaScript, dengan `lang`, canonical, metadata, dan tautan `hreflang` masing-masing. Nama pribadi, gelar resmi, dan nama institusi tetap dipertahankan.
 
 Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
 
