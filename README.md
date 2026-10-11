@@ -1,4 +1,4 @@
-# Arya Sura Pratama — Profil Akademik & Teknologi
+# Arya Sura Pratama, M.Kom. — Profil Akademik & Teknologi
 
 Website personal **Arya Sura Pratama, M.Kom.**, dosen tetap di **Jinarakkhita Buddhist College of Lampung** dengan homebase **Program Studi Pendidikan Keagamaan Buddha**, serta **Founder & Technology Lead SoftKlinik**.
 
