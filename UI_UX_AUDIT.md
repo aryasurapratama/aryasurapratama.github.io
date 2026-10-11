@@ -121,3 +121,23 @@ Verifikasi pada Chromium dan WebKit dengan emulasi sentuh:
 - Screenshot halaman, menu landscape, dan formulir pendek ditinjau secara visual. Tidak ditemukan galat JavaScript atau kegagalan aset dalam pengujian halaman utama. `npm run check`, `npm run build`, dan pemeriksaan whitespace Git lulus.
 
 Pengujian menggunakan emulasi browser, bukan perangkat iPhone atau Android fisik. Hasil di atas merupakan bukti pemeriksaan yang dilakukan, bukan skor mutlak untuk semua perangkat.
+
+## Tampilan mobile lebih padat — 12 Oktober 2026
+
+- Pada lebar maksimal 620px, header menjadi 56px dan margin samping 16px. Padding bagian menjadi 24px, jarak kelompok isi 20px, dan padding kartu 14px. Teks isi tetap 16px dengan tinggi baris 1,6; tombol dan tautan tindakan tetap minimal 44 × 44px.
+- Foto beranda menjadi panel horizontal dengan foto 112 × 148px, homebase, serta lokasi. Ikon dekoratif caption tidak diulang. Seluruh informasi teks dan foto asli tetap tersedia.
+- Ikon kartu ditempatkan sejajar dengan judul. Kartu pendidikan, daftar publikasi, timeline, tabel teknologi, panel SoftKlinik, kontak, dan formulir menggunakan jarak mobile yang lebih ringkas. Perubahan hanya berlaku pada breakpoint ponsel.
+- Perbandingan isi utama pada 36 keadaan halaman (12 halaman × lebar 320, 390, dan 430px) memastikan teks yang terlihat sama dengan versi sebelum pemadatan. Tidak ada ringkasan, publikasi, atau bagian isi yang disembunyikan.
+
+Tinggi halaman Indonesia pada viewport 390 × 844px, diukur di Chromium:
+
+| Halaman    | Sebelum | Sesudah | Lebih pendek |
+| ---------- | ------: | ------: | -----------: |
+| Beranda    | 3607px  | 2620px  | 27%          |
+| Profil     | 4377px  | 3487px  | 20%          |
+| Pendidikan | 3765px  | 3007px  | 20%          |
+| Penelitian | 4385px  | 3499px  | 20%          |
+| Karya      | 6106px  | 4992px  | 18%          |
+| Kontak     | 3880px  | 3120px  | 20%          |
+
+Setelah pemadatan, seluruh 12 halaman diuji di Chromium dan WebKit pada 320, 360, 375, 390, 414, 430, 620, 768, 1024, dan 1440px: 240 pemeriksaan layout dan 48 pemindaian axe lulus. Navigasi sentuh/keyboard, tautan daftar isi, menu landscape, formulir dan FAQ, pembesaran teks 200%, pengaturan jarak teks, serta 24 halaman tanpa JavaScript juga lulus. Penyesuaian akhir jarak beranda diperiksa lagi di kedua mesin browser. Screenshot beranda, pendidikan, penelitian, karya, dan kontak ditinjau secara visual.
