@@ -21,7 +21,7 @@ body {
   color: var(--navy);
   background: var(--white);
   font-family: var(--font);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
@@ -80,7 +80,7 @@ a {
   flex-shrink: 0;
 }
 .container {
-  width: min(1180px, calc(100% - 112px));
+  width: min(1180px, calc(100% - 80px));
   margin-inline: auto;
 }
 .skip-link {
@@ -104,7 +104,7 @@ a {
   backdrop-filter: blur(16px);
 }
 .header-inner {
-  height: 96px;
+  height: 88px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -115,6 +115,7 @@ a {
   align-items: center;
   gap: 13px;
   flex-shrink: 0;
+  min-height: 44px;
 }
 .brand-mark {
   width: 41px;
@@ -135,7 +136,7 @@ a {
 }
 .brand-name {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 800;
   letter-spacing: -0.2px;
   line-height: 1.5;
@@ -143,20 +144,23 @@ a {
 .brand-name > span {
   display: block;
   margin-top: 4px;
-  font-size: 8px;
-  letter-spacing: 1.2px;
+  font-size: 10px;
+  letter-spacing: 0.8px;
   font-weight: 500;
   color: var(--muted);
 }
 .navigation {
   display: flex;
   align-items: center;
-  gap: 29px;
-  font-size: 12px;
+  gap: 24px;
+  font-size: 14px;
   font-weight: 600;
 }
 .navigation > a {
   transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .navigation > a:hover,
 .navigation > a.active {
@@ -167,7 +171,7 @@ a {
   color: white;
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 16px;
   padding: 12px 18px;
   border-radius: 6px;
   margin-left: 5px;
@@ -184,20 +188,20 @@ a {
 }
 .hero {
   display: grid;
-  grid-template-columns: 1.25fr 1fr;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   align-items: center;
-  gap: 90px;
-  padding-block: 76px 92px;
+  gap: 72px;
+  padding-block: 64px 72px;
 }
 .eyebrow {
   display: flex;
   gap: 9px;
   align-items: center;
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
   color: var(--blue);
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .eyebrow-line {
   width: 24px;
@@ -205,7 +209,7 @@ a {
   background: currentColor;
 }
 h1 {
-  font-size: clamp(57px, 5.65vw, 80px);
+  font-size: clamp(60px, 5.6vw, 80px);
   font-weight: 600;
   letter-spacing: -0.06em;
   line-height: 1.06;
@@ -214,7 +218,7 @@ h1 {
   font-size: 26px;
   letter-spacing: -0.6px;
   display: block;
-  margin-top: 16px;
+  margin-top: 14px;
   font-weight: 500;
   color: var(--blue);
 }
@@ -222,18 +226,18 @@ h1 {
   font-size: 24px;
   line-height: 1.45;
   letter-spacing: -0.6px;
-  margin-top: 31px;
+  margin-top: 24px;
   font-weight: 500;
 }
 .hero-lead > span {
   color: var(--muted);
 }
 .hero-description {
-  margin-top: 20px;
-  max-width: 480px;
-  font-size: 13px;
+  margin-top: 18px;
+  max-width: 520px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.9;
+  line-height: 1.75;
 }
 .hero-description > strong {
   font-weight: 600;
@@ -242,28 +246,29 @@ h1 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 13px;
-  margin-top: 29px;
+  gap: 12px;
+  margin-top: 26px;
 }
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 22px;
-  font-size: 11px;
+  gap: 16px;
+  font-size: 14px;
   font-weight: 700;
   border: 1px solid transparent;
   border-radius: 6px;
-  padding: 14px 19px;
+  padding: 13px 20px;
   line-height: 1.6;
   transition:
     background 0.2s,
     color 0.2s,
     transform 0.2s;
+  min-height: 48px;
 }
 .button .icon {
-  width: 17px;
-  height: 17px;
+  width: 19px;
+  height: 19px;
 }
 .button:hover {
   transform: translateY(-2px);
@@ -295,14 +300,14 @@ h1 {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 17px;
+  gap: 0 24px;
   border-top: 1px solid var(--line);
-  margin-top: 33px;
-  padding-top: 20px;
+  margin-top: 28px;
+  padding-top: 18px;
 }
 .hero-socials > span {
   width: 100%;
-  font-size: 8px;
+  font-size: 11px;
   font-weight: 600;
   letter-spacing: 1.2px;
   color: var(--muted);
@@ -311,12 +316,13 @@ h1 {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
+  min-height: 44px;
 }
 .hero-socials .icon {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   color: var(--muted);
 }
 .hero-socials > a:hover {
@@ -326,9 +332,9 @@ h1 {
   position: relative;
   min-width: 0;
   width: 100%;
-  max-width: 405px;
+  max-width: 420px;
   justify-self: end;
-  padding-bottom: 42px;
+  padding-bottom: 0;
 }
 .portrait-frame {
   border-radius: 12px 12px 0 0;
@@ -339,9 +345,9 @@ h1 {
 }
 .portrait-frame > img {
   width: 100%;
-  height: 470px;
+  height: 500px;
   object-fit: cover;
-  object-position: center 26%;
+  object-position: center 12%;
 }
 .portrait-location {
   position: absolute;
@@ -350,11 +356,11 @@ h1 {
   width: 100%;
   background: linear-gradient(transparent, #071524d9);
   color: #e7edf8;
-  padding: 42px 22px 19px;
+  padding: 42px 24px 20px;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.3px;
 }
 .portrait-location .icon {
@@ -363,16 +369,16 @@ h1 {
 }
 .portrait-caption {
   position: relative;
-  margin-left: -26px;
-  margin-right: 26px;
-  margin-top: -1px;
-  padding: 22px 22px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  padding: 20px;
   background: white;
   border: 1px solid var(--line);
   display: flex;
   gap: 15px;
   align-items: center;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 10px 28px #14254008;
 }
 .caption-icon {
@@ -391,38 +397,30 @@ h1 {
 }
 .portrait-caption > div > span {
   display: block;
-  font-size: 7px;
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
   color: var(--muted);
   margin-bottom: 5px;
 }
 .portrait-caption strong {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   line-height: 1.6;
 }
-.portrait-index {
-  position: absolute;
-  bottom: 10px;
-  right: 26px;
-  font-size: 7px;
-  letter-spacing: 1.4px;
-  color: var(--muted);
-}
 .section-pad {
-  padding-block: 90px;
+  padding-block: 88px;
 }
 .section-label {
   color: var(--blue);
-  font-size: 9px;
-  letter-spacing: 1.3px;
+  font-size: 12px;
+  letter-spacing: 1px;
   font-weight: 700;
-  margin-bottom: 23px;
+  margin-bottom: 20px;
 }
 h2 {
-  font-size: 43px;
+  font-size: clamp(36px, 3.4vw, 48px);
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1.2;
@@ -431,10 +429,10 @@ h2 > span {
   color: var(--blue);
 }
 .section-heading > p:not(.section-label) {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
-  line-height: 1.95;
-  max-width: 310px;
+  line-height: 1.8;
+  max-width: 380px;
   margin-top: 23px;
 }
 .profile-section {
@@ -442,8 +440,8 @@ h2 > span {
 }
 .profile-layout {
   display: grid;
-  grid-template-columns: 1fr 1.38fr;
-  gap: 85px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  gap: 72px;
   align-items: start;
 }
 .profile-facts {
@@ -451,9 +449,9 @@ h2 > span {
 }
 .profile-facts > div {
   display: grid;
-  grid-template-columns: 155px 1fr;
-  gap: 15px;
-  padding-block: 23px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 20px;
+  padding-block: 26px;
   border-bottom: 1px solid var(--line);
 }
 .profile-facts > div:first-child {
@@ -461,10 +459,10 @@ h2 > span {
 }
 .profile-facts dt {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 13px;
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
   margin-top: 5px;
 }
 .profile-facts dt .icon {
@@ -474,14 +472,14 @@ h2 > span {
 }
 .profile-facts dd {
   margin: 0;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.6;
   letter-spacing: -0.4px;
 }
 .profile-facts dd > span {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--muted);
   letter-spacing: 0;
@@ -492,9 +490,10 @@ h2 > span {
   align-items: center;
   justify-content: space-between;
   gap: 18px;
-  font-size: 10px;
+  font-size: 14px;
   color: var(--blue);
   margin-top: 20px;
+  min-height: 44px;
 }
 .institution-link .icon {
   width: 16px;
@@ -511,26 +510,26 @@ h2 > span {
   display: flex;
   align-items: end;
   justify-content: space-between;
-  gap: 35px;
-  margin-bottom: 37px;
+  gap: 40px;
+  margin-bottom: 36px;
 }
 .section-summary {
   color: var(--muted);
-  font-size: 11px;
-  line-height: 1.9;
-  max-width: 290px;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 310px;
   padding-bottom: 5px;
 }
 .education-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 25px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
 }
 .education-card {
   background: white;
-  padding: 28px 31px 0;
+  padding: 32px 32px 0;
   border: 1px solid #e0e6ef;
-  border-radius: 10px;
+  border-radius: 12px;
 }
 .education-top {
   display: flex;
@@ -538,47 +537,48 @@ h2 > span {
   align-items: center;
 }
 .degree-label {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.7px;
   border: 1px solid #dce4f1;
   border-radius: 5px;
-  padding: 4px 11px;
+  padding: 4px 12px;
   color: var(--blue);
   background: #f4f7fc;
 }
 .education-year {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
 }
 .degree-type {
-  font-size: 8px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 1.1px;
   color: var(--muted);
-  margin-top: 31px;
+  margin-top: 28px;
 }
 .education-card h3 {
-  font-size: 37px;
+  font-size: 40px;
   font-weight: 600;
-  margin-top: 7px;
+  margin-top: 8px;
 }
 .study-field {
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
   margin-top: 10px;
 }
 .university {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 27px;
+  margin-top: 28px;
   border-top: 1px solid var(--line);
-  padding: 21px 0;
-  font-size: 11px;
+  padding: 24px 0;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.6;
+  min-height: 94px;
 }
 .university .icon {
   width: 18px;
@@ -591,9 +591,9 @@ h2 > span {
   gap: 18px;
   background: #e9eef7;
   border: 1px solid #dce4f0;
-  border-radius: 8px;
-  padding: 23px 26px;
-  margin-top: 25px;
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 24px;
 }
 .thesis-icon {
   color: var(--blue);
@@ -609,20 +609,20 @@ h2 > span {
 .thesis-link small {
   display: block;
   color: var(--blue);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 1px;
   font-weight: 700;
   margin-bottom: 5px;
 }
 .thesis-link strong {
   display: block;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 .thesis-link > span > span {
   display: block;
-  font-size: 10px;
+  font-size: 13px;
   color: var(--muted);
   margin-top: 3px;
 }
@@ -637,9 +637,10 @@ h2 > span {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--blue);
+  min-height: 44px;
 }
 .text-link .icon {
   width: 16px;
@@ -654,9 +655,9 @@ h2 > span {
 }
 .research-intro {
   color: var(--muted);
-  font-size: 12px;
-  max-width: 660px;
-  line-height: 1.9;
+  font-size: 16px;
+  max-width: 720px;
+  line-height: 1.8;
   margin-bottom: 33px;
 }
 .publication-list {
@@ -664,44 +665,44 @@ h2 > span {
 }
 .publication {
   display: grid;
-  grid-template-columns: 75px 1fr 40px;
+  grid-template-columns: 64px minmax(0, 1fr) 44px;
   align-items: center;
   gap: 28px;
-  padding: 27px 0;
+  padding: 30px 0;
   border-bottom: 1px solid var(--line);
 }
 .publication-year {
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--muted);
   align-self: start;
   margin-top: 3px;
 }
 .publication-topic {
-  font-size: 8px;
-  letter-spacing: 1px;
+  font-size: 12px;
+  letter-spacing: 0.8px;
   font-weight: 600;
   color: var(--blue);
   margin-bottom: 10px;
 }
 .publication h3 {
-  font-size: 21px;
-  font-weight: 500;
+  font-size: 23px;
+  font-weight: 600;
   letter-spacing: -0.4px;
   line-height: 1.45;
-  max-width: 750px;
+  max-width: 800px;
   transition: color 0.2s;
 }
 .publication > div > p:last-child {
-  font-size: 10px;
+  font-size: 13px;
   color: var(--muted);
   margin-top: 9px;
 }
 .publication-action {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 50%;
   transition:
@@ -709,8 +710,8 @@ h2 > span {
     color 0.2s;
 }
 .publication-action .icon {
-  width: 17px;
-  height: 17px;
+  width: 19px;
+  height: 19px;
 }
 .publication:hover h3 {
   color: var(--blue);
@@ -722,17 +723,17 @@ h2 > span {
 }
 .academic-profiles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
   margin-top: 33px;
 }
 .academic-profiles > a {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   border: 1px solid var(--line);
-  padding: 20px 18px;
-  border-radius: 8px;
+  padding: 22px 20px;
+  border-radius: 12px;
   transition:
     border-color 0.2s,
     background 0.2s;
@@ -742,8 +743,8 @@ h2 > span {
   background: var(--pale);
 }
 .academic-symbol {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 6px;
   background: #edf2fb;
   color: var(--blue);
@@ -768,18 +769,18 @@ h2 > span {
 }
 .academic-profiles strong {
   display: block;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
 }
 .academic-profiles > a > div > span {
   display: block;
-  font-size: 8px;
+  font-size: 12px;
   margin-top: 3px;
   color: var(--muted);
 }
 .academic-profiles > a > .icon {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   color: var(--muted);
 }
 .work-section {
@@ -787,13 +788,13 @@ h2 > span {
 }
 .softklinik-feature {
   display: grid;
-  grid-template-columns: 1fr 1.12fr;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
   gap: 40px;
   align-items: center;
-  border-radius: 12px;
+  border-radius: 16px;
   background: var(--navy);
   overflow: hidden;
-  padding: 50px 0 50px 42px;
+  padding: 48px;
   color: white;
 }
 .venture-label {
@@ -801,8 +802,8 @@ h2 > span {
   align-items: center;
   gap: 8px;
   color: #b4c6e9;
-  font-size: 8px;
-  letter-spacing: 1.2px;
+  font-size: 11px;
+  letter-spacing: 1px;
   font-weight: 600;
 }
 .venture-label > span {
@@ -812,7 +813,7 @@ h2 > span {
   background: #8caaf1;
 }
 .softklinik-copy h3 {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 600;
   letter-spacing: -1.7px;
   margin-top: 20px;
@@ -821,16 +822,16 @@ h2 > span {
   color: #94b3ff;
 }
 .founder-role {
-  font-size: 11px;
+  font-size: 15px;
   color: #c3d1ea;
   margin-top: 10px;
 }
 .venture-description {
-  font-size: 12px;
-  color: #b7c7e3;
-  line-height: 1.95;
-  max-width: 370px;
-  margin-top: 23px;
+  font-size: 16px;
+  color: #c3d1e5;
+  line-height: 1.8;
+  max-width: 440px;
+  margin-top: 24px;
 }
 .service-tags {
   display: flex;
@@ -839,10 +840,10 @@ h2 > span {
   margin-top: 22px;
 }
 .service-tags > span {
-  font-size: 8px;
+  font-size: 12px;
   border: 1px solid #425678;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   color: #d4e0f5;
 }
 .softklinik-copy .button {
@@ -854,26 +855,27 @@ h2 > span {
 .softklinik-preview {
   min-width: 0;
   background: white;
-  margin-right: -23px;
-  transform: rotate(-3deg);
+  margin-right: 0;
+  transform: none;
   border: 1px solid #7588ab;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 20px 50px #030c1840;
   transition: transform 0.3s;
+  border-color: #b3c2dc;
 }
 .softklinik-preview:hover {
-  transform: rotate(-1deg);
+  transform: translateY(-4px);
 }
 .preview-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  padding: 12px 15px;
+  padding: 12px 16px;
   border-bottom: 1px solid var(--line);
   color: var(--muted);
-  font-size: 8px;
+  font-size: 12px;
 }
 .preview-bar .icon {
   width: 12px;
@@ -903,8 +905,8 @@ h2 > span {
   border-top: 1px solid var(--line);
   color: var(--muted);
   padding: 11px;
-  font-size: 7px;
-  letter-spacing: 1px;
+  font-size: 10px;
+  letter-spacing: 0.7px;
 }
 
 .contact-section {
@@ -913,9 +915,9 @@ h2 > span {
 }
 .contact-layout {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: 100px;
+  gap: 88px;
 }
 .contact-section .section-label {
   color: #b8cdf5;
@@ -928,9 +930,9 @@ h2 > span {
 }
 .contact-copy > p:not(.section-label) {
   margin-top: 21px;
-  font-size: 12px;
-  color: #b7c7e0;
-  line-height: 1.95;
+  font-size: 16px;
+  color: #c3d1e5;
+  line-height: 1.8;
 }
 .contact-copy > .button {
   margin-top: 29px;
@@ -950,26 +952,30 @@ h2 > span {
 .phone-row > div > span {
   display: block;
   color: #b7c7e0;
-  font-size: 8px;
-  letter-spacing: 1.2px;
+  font-size: 12px;
+  letter-spacing: 1px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 .phone-row a {
-  font-size: 27px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.8px;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
 }
 .phone-row > button {
   display: grid;
   place-items: center;
-  width: 39px;
-  height: 39px;
+  width: 44px;
+  height: 44px;
   color: #c4d4ef;
   background: transparent;
   border: 1px solid #5b6e8d;
   border-radius: 7px;
+  flex-shrink: 0;
 }
 .phone-row > button:hover {
   background: #29405f;
@@ -993,12 +999,14 @@ h2 > span {
 .contact-link > span {
   display: block;
   flex: 1;
-  font-size: 13px;
+  font-size: 16px;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .contact-link small {
   display: block;
   color: #b7c7e0;
-  font-size: 7px;
+  font-size: 11px;
   letter-spacing: 1px;
   margin-bottom: 3px;
 }
@@ -1024,21 +1032,22 @@ h2 > span {
   border-radius: 6px;
 }
 .footer-inner .brand-name {
-  font-size: 10px;
+  font-size: 13px;
 }
 .footer-inner .brand-name > span {
-  font-size: 7px;
+  font-size: 10px;
 }
 .footer-inner p {
-  font-size: 9px;
+  font-size: 12px;
   color: var(--muted);
 }
 .back-top {
   display: flex;
   align-items: center;
   gap: 13px;
-  font-size: 9px;
+  font-size: 13px;
   color: var(--muted);
+  min-height: 44px;
 }
 .back-top .icon {
   width: 16px;
@@ -1054,7 +1063,7 @@ h2 > span {
   transform: translate(-50%, 15px);
   max-width: calc(100% - 32px);
   padding: 13px 22px;
-  font-size: 12px;
+  font-size: 14px;
   color: white;
   background: var(--navy);
   border: 1px solid #5b6e8d;
@@ -1067,906 +1076,512 @@ h2 > span {
     opacity 0.2s,
     transform 0.2s;
   box-shadow: 0 5px 30px #14254026;
+  width: max-content;
 }
 .toast.visible {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
 }
-@media (min-width: 1440px) {
-  .hero {
-    padding-block: 87px 97px;
-  }
+
+/* Preserve readable type; adapt the layout before narrowing the text. */
+.hero-copy,
+.profile-details,
+.softklinik-copy,
+.contact-copy,
+.contact-details,
+.academic-profiles > a > div {
+  min-width: 0;
+}
+.navigation .nav-contact.active {
+  color: white;
+  background: var(--blue);
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+#main:focus {
+  outline: none;
 }
 @media (max-width: 1100px) {
-  .container {
-    width: calc(100% - 80px);
-  }
   .hero {
-    gap: 50px;
-  }
-  .hero-portrait {
-    max-width: 345px;
-  }
-  .portrait-frame > img {
-    height: 425px;
-  }
-  .navigation {
-    gap: 22px;
-  }
-  .brand-name {
-    font-size: 11px;
-  }
-  .brand-name > span {
-    font-size: 7px;
-  }
-  .hero-socials {
-    gap: 13px;
-  }
-  .hero-lead {
-    font-size: 22px;
+    gap: 40px;
   }
   .profile-layout {
-    gap: 50px;
-    grid-template-columns: 1fr 1.35fr;
+    gap: 40px;
   }
   .profile-facts > div {
-    grid-template-columns: 130px 1fr;
+    grid-template-columns: 125px minmax(0, 1fr);
+    gap: 16px;
   }
   .profile-facts dd {
-    font-size: 17px;
-  }
-  h2 {
-    font-size: 38px;
-  }
-  .academic-profiles {
-    gap: 12px;
-  }
-  .academic-profiles > a {
-    padding: 17px 13px;
-    gap: 10px;
-  }
-  .academic-profiles > a > .icon {
-    width: 12px;
-  }
-  .academic-profiles > a > div > span {
-    font-size: 7px;
+    font-size: 18px;
   }
   .softklinik-feature {
-    gap: 25px;
-    padding-left: 33px;
+    padding: 36px;
+    gap: 32px;
+  }
+  .academic-profiles > a {
+    padding: 20px 16px;
   }
   .contact-layout {
-    gap: 70px;
-  }
-  .phone-row a {
-    font-size: 24px;
+    gap: 48px;
   }
 }
-@media (max-width: 860px) {
-  .container {
-    width: calc(100% - 56px);
+@media (max-width: 1024px) {
+  html {
+    scroll-padding-top: 104px;
   }
   .header-inner {
-    height: 82px;
-  }
-  .brand-name {
-    font-size: 12px;
-  }
-  .brand-name > span {
-    font-size: 7px;
+    height: 80px;
   }
   .menu-toggle {
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    flex-shrink: 0;
     gap: 6px;
-    background: transparent;
+    background: white;
     border: 1px solid var(--line);
-    border-radius: 6px;
+    border-radius: 8px;
   }
   .menu-toggle > span {
     display: block;
-    width: 18px;
-    height: 1px;
+    width: 20px;
+    height: 1.5px;
     background: var(--navy);
     transition: transform 0.2s;
   }
   .menu-toggle[aria-expanded="true"] > span:first-child {
-    transform: translateY(3.5px) rotate(45deg);
+    transform: translateY(3.75px) rotate(45deg);
   }
   .menu-toggle[aria-expanded="true"] > span:last-child {
-    transform: translateY(-3.5px) rotate(-45deg);
+    transform: translateY(-3.75px) rotate(-45deg);
   }
   .navigation {
     display: none;
     position: absolute;
-    top: 82px;
+    top: 100%;
     left: 0;
     right: 0;
     background: white;
-    padding: 14px 28px 24px;
+    padding: 12px 40px 24px;
     border-bottom: 1px solid var(--line);
     align-items: stretch;
     flex-direction: column;
     gap: 0;
-    box-shadow: 0 20px 25px #1425400a;
+    max-height: calc(100vh - 80px);
+    max-height: calc(100dvh - 80px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 16px 28px #14254012;
   }
   .navigation.open {
     display: flex;
   }
   .navigation > a {
-    padding: 13px 2px;
-    font-size: 13px;
+    padding: 14px 0;
+    min-height: 48px;
+    font-size: 15px;
   }
   .navigation .nav-contact {
-    margin: 9px 0 0;
-    padding: 12px 16px;
+    margin: 10px 0 0;
+    padding: 14px 18px;
     justify-content: space-between;
   }
   .hero {
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 34px;
-    padding-block: 62px 66px;
-  }
-  h1 {
-    font-size: 55px;
-  }
-  .hero-degree {
-    font-size: 22px;
-    margin-top: 13px;
-  }
-  .eyebrow {
-    font-size: 7px;
-    letter-spacing: 0.6px;
-    margin-bottom: 21px;
-  }
-  .eyebrow-line {
-    width: 15px;
-  }
-  .hero-lead {
-    font-size: 19px;
-    margin-top: 23px;
-  }
-  .hero-description {
-    font-size: 12px;
-    margin-top: 15px;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 36px;
   }
   .hero-actions {
-    gap: 9px;
-    margin-top: 21px;
-  }
-  .button {
-    padding: 12px 13px;
-    font-size: 9px;
-    gap: 11px;
-  }
-  .button .icon {
-    width: 15px;
-    height: 15px;
-  }
-  .hero-socials {
-    margin-top: 24px;
-    padding-top: 16px;
-    gap: 12px;
-  }
-  .hero-socials > a {
-    font-size: 8px;
-  }
-  .hero-socials > span {
-    font-size: 7px;
-  }
-  .hero-portrait {
-    padding-bottom: 38px;
-  }
-  .portrait-frame > img {
-    height: 385px;
-  }
-  .portrait-location {
-    font-size: 8px;
-    padding-inline: 14px;
-  }
-  .portrait-caption {
-    margin-left: -18px;
-    margin-right: 10px;
-    gap: 9px;
-    padding: 18px 12px;
-  }
-  .caption-icon {
-    width: 34px;
-    height: 34px;
-  }
-  .caption-icon .icon {
-    width: 20px;
-    height: 20px;
-  }
-  .portrait-caption > div > span {
-    font-size: 6px;
-    letter-spacing: 0.6px;
-  }
-  .portrait-caption strong {
-    font-size: 9px;
-  }
-  .portrait-index {
-    font-size: 6px;
-    right: 10px;
-  }
-  .section-pad {
-    padding-block: 66px;
-  }
-  h2 {
-    font-size: 34px;
-  }
-  .section-label {
-    font-size: 8px;
-    margin-bottom: 19px;
-  }
-  .profile-layout {
-    gap: 35px;
-    grid-template-columns: 1fr 1.3fr;
-  }
-  .section-heading > p:not(.section-label) {
-    font-size: 11px;
-    margin-top: 20px;
-  }
-  .profile-facts > div {
-    grid-template-columns: 105px 1fr;
-    gap: 11px;
-    padding-block: 21px;
-  }
-  .profile-facts dt {
-    font-size: 8px;
-    gap: 7px;
-  }
-  .profile-facts dt .icon {
-    width: 15px;
-    height: 15px;
-  }
-  .profile-facts dd {
-    font-size: 14px;
-    letter-spacing: -0.2px;
-  }
-  .profile-facts dd > span {
-    font-size: 10px;
-  }
-  .institution-link {
-    font-size: 8px;
-    gap: 15px;
-  }
-  .education-grid {
-    gap: 20px;
-  }
-  .education-card {
-    padding: 24px 24px 0;
-  }
-  .university {
-    font-size: 10px;
-  }
-  .section-summary {
-    font-size: 10px;
-  }
-  .section-top {
-    margin-bottom: 29px;
-  }
-  .thesis-link {
-    padding: 21px;
-  }
-  .thesis-link strong {
-    font-size: 11px;
-  }
-  .thesis-link > span > span {
-    font-size: 9px;
-  }
-  .research-section .section-top {
-    align-items: start;
-  }
-  .research-section .section-top > .text-link {
-    max-width: 190px;
-    margin-top: 48px;
-    font-size: 9px;
-  }
-  .publication {
-    gap: 18px;
-    grid-template-columns: 58px 1fr 34px;
-  }
-  .publication h3 {
-    font-size: 18px;
-  }
-  .publication > div > p:last-child {
-    font-size: 9px;
-  }
-  .publication-action {
-    width: 33px;
-    height: 33px;
-  }
-  .academic-profiles {
-    gap: 10px;
-  }
-  .academic-profiles > a {
-    gap: 9px;
-    padding: 17px 10px;
-  }
-  .academic-symbol {
-    width: 28px;
-    height: 28px;
-    font-size: 17px;
-  }
-  .academic-symbol .icon {
-    width: 18px;
-    height: 18px;
-  }
-  .academic-profiles strong {
-    font-size: 9px;
-  }
-  .academic-profiles > a > div > span {
-    font-size: 6px;
-  }
-  .academic-profiles > a > .icon {
-    width: 11px;
-    height: 11px;
-  }
-  .softklinik-feature {
-    padding: 35px 0 35px 28px;
-    gap: 25px;
-    grid-template-columns: 1fr 1fr;
-  }
-  .softklinik-copy h3 {
-    font-size: 35px;
-  }
-  .founder-role {
-    font-size: 10px;
-  }
-  .venture-description {
-    font-size: 10px;
-    margin-top: 17px;
-  }
-  .service-tags {
-    gap: 5px;
-    margin-top: 17px;
-  }
-  .service-tags > span {
-    font-size: 7px;
-    padding: 4px 7px;
-  }
-  .softklinik-copy .button {
-    margin-top: 23px;
-  }
-  .venture-label {
-    font-size: 7px;
-    letter-spacing: 0.7px;
-  }
-  .softklinik-preview {
-    margin-right: -22px;
-  }
-  .preview-bar {
-    padding: 10px;
-    font-size: 6px;
-  }
-  .preview-caption {
-    font-size: 6px;
-    padding: 9px;
-  }
-  .softklinik-preview img {
-    aspect-ratio: 1.5;
-  }
-
-  .contact-layout {
-    gap: 45px;
-  }
-  .contact-copy h2 {
-    font-size: 38px;
-  }
-  .contact-copy > p:not(.section-label) {
-    font-size: 11px;
-  }
-  .phone-row a {
-    font-size: 23px;
-  }
-  .phone-row > button {
-    width: 34px;
-    height: 34px;
-  }
-  .contact-link {
-    gap: 15px;
-  }
-  .contact-link > span {
-    font-size: 11px;
-  }
-}
-@media (max-width: 620px) {
-  html {
-    scroll-padding-top: 98px;
-  }
-  .container {
-    width: calc(100% - 40px);
-  }
-  .header-inner {
-    height: 76px;
-  }
-  .navigation {
-    top: 76px;
-    padding-inline: 20px;
-  }
-  .brand-mark {
-    width: 36px;
-    height: 37px;
-    font-size: 30px;
-  }
-  .brand-name {
-    font-size: 11px;
-  }
-  .brand-name > span {
-    font-size: 6px;
-    letter-spacing: 0.9px;
-  }
-  .brand {
-    gap: 10px;
-  }
-  .menu-toggle {
-    width: 36px;
-    height: 36px;
-  }
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 41px;
-    padding-block: 44px 51px;
-  }
-  .eyebrow {
-    font-size: 8px;
-    letter-spacing: 0.7px;
-    margin-bottom: 25px;
-  }
-  h1 {
-    font-size: clamp(58px, 14.5vw, 76px);
-    letter-spacing: -0.065em;
-  }
-  .hero-degree {
-    font-size: 24px;
-    margin-top: 14px;
-  }
-  .hero-lead {
-    font-size: 23px;
-    margin-top: 28px;
-  }
-  .hero-description {
-    font-size: 13px;
-    line-height: 1.9;
-    margin-top: 20px;
-    max-width: 460px;
-  }
-  .hero-actions {
-    margin-top: 26px;
-    gap: 10px;
-  }
-  .button {
-    font-size: 10px;
-    padding: 14px 16px;
-    gap: 16px;
-  }
-  .button .icon {
-    width: 16px;
-    height: 16px;
-  }
-  .hero-socials {
-    gap: 20px;
-    margin-top: 27px;
-    padding-top: 19px;
-  }
-  .hero-socials > span {
-    font-size: 8px;
-  }
-  .hero-socials > a {
-    font-size: 9px;
-  }
-  .hero-socials .icon {
-    width: 11px;
-    height: 11px;
-  }
-  .hero-portrait {
-    width: calc(100% - 12px);
-    max-width: 370px;
-    margin-inline: auto;
-    justify-self: center;
-    padding-bottom: 25px;
-  }
-  .portrait-frame > img {
-    height: 420px;
-    object-position: center 27%;
-  }
-  .portrait-frame {
-    border-radius: 10px 10px 0 0;
-  }
-  .portrait-location {
-    font-size: 9px;
-    padding-inline: 20px;
-  }
-  .portrait-caption {
-    padding: 20px 16px;
-    margin-left: -12px;
-    margin-right: 12px;
-    gap: 12px;
-  }
-  .caption-icon {
-    width: 37px;
-    height: 37px;
-  }
-  .portrait-caption > div > span {
-    font-size: 7px;
-  }
-  .portrait-caption strong {
-    font-size: 11px;
-  }
-  .portrait-index {
-    bottom: 0;
-    right: 12px;
-    font-size: 6px;
-  }
-  .section-pad {
-    padding-block: 55px;
-  }
-  .section-label {
-    font-size: 8px;
-    margin-bottom: 19px;
-  }
-  h2 {
-    font-size: 35px;
-  }
-  .profile-layout {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-  .section-heading > p:not(.section-label) {
-    font-size: 12px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     max-width: 420px;
-    margin-top: 22px;
+  }
+  h1 {
+    font-size: 62px;
+  }
+  .portrait-frame > img {
+    height: 460px;
+  }
+  .portrait-caption {
+    gap: 12px;
+    padding: 18px;
+  }
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .section-heading > p:not(.section-label) {
+    max-width: 620px;
   }
   .profile-facts > div {
-    grid-template-columns: 110px 1fr;
-    gap: 15px;
-    padding-block: 22px;
-  }
-  .profile-facts dt {
-    font-size: 9px;
-  }
-  .profile-facts dt .icon {
-    width: 16px;
-    height: 16px;
-  }
-  .profile-facts dd {
-    font-size: 16px;
-  }
-  .profile-facts dd > span {
-    font-size: 10px;
+    grid-template-columns: 180px minmax(0, 1fr);
   }
   .desktop-break {
     display: none;
   }
-  .institution-link {
-    font-size: 9px;
-    line-height: 1.8;
-    margin-top: 21px;
+  .academic-profiles {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
-  .institution-link .icon {
-    width: 15px;
-    height: 15px;
+  .academic-profiles > a {
+    padding: 20px 24px;
+    gap: 16px;
+  }
+  .softklinik-feature {
+    grid-template-columns: 1fr;
+    padding: 40px;
+    gap: 36px;
+  }
+  .venture-description {
+    max-width: 620px;
+  }
+  .softklinik-preview {
+    width: 100%;
+  }
+  .softklinik-preview img {
+    aspect-ratio: 1.8;
+  }
+  .section-pad {
+    padding-block: 72px;
   }
   .section-top {
-    display: block;
-    margin-bottom: 28px;
+    align-items: flex-start;
   }
   .section-summary {
-    font-size: 11px;
-    margin-top: 20px;
+    max-width: 260px;
+  }
+  .contact-layout {
+    gap: 40px;
+  }
+  .contact-copy h2 {
+    font-size: 42px;
+  }
+  .phone-row {
+    gap: 12px;
+  }
+  .phone-row a {
+    font-size: 28px;
+  }
+  .footer-inner {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 800px) {
+  .container {
+    width: calc(100% - 48px);
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-block: 48px 64px;
+    gap: 40px;
+  }
+  .hero-copy {
+    max-width: 600px;
+  }
+  h1 {
+    font-size: clamp(60px, 9vw, 72px);
+  }
+  .hero-portrait {
+    justify-self: start;
+    max-width: 420px;
+  }
+  .portrait-frame > img {
+    height: 490px;
+  }
+  .navigation {
+    padding-inline: 24px;
+  }
+  .section-top {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  .section-summary {
+    max-width: 520px;
     padding: 0;
-    max-width: 320px;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .contact-copy > p:not(.section-label) {
+    max-width: 520px;
+  }
+}
+@media (max-width: 620px) {
+  html {
+    scroll-padding-top: 100px;
+  }
+  .header-inner {
+    height: 76px;
+    gap: 16px;
+  }
+  .brand {
+    gap: 10px;
+  }
+  .brand-mark {
+    width: 38px;
+    height: 40px;
+    font-size: 32px;
+  }
+  .brand-name {
+    font-size: 12px;
+  }
+  .brand-name > span {
+    font-size: 9px;
+    letter-spacing: 0.65px;
+  }
+  .navigation {
+    max-height: calc(100vh - 76px);
+    max-height: calc(100dvh - 76px);
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    gap: 8px;
+    line-height: 1.7;
+  }
+  .eyebrow-line {
+    width: 18px;
+    flex-shrink: 0;
+  }
+  h1 {
+    font-size: clamp(54px, 14vw, 72px);
+  }
+  .hero-degree {
+    font-size: 24px;
+  }
+  .hero-lead {
+    font-size: 22px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 420px;
+  }
+  .hero-socials {
+    gap: 0 18px;
+  }
+  .hero-socials > a {
+    font-size: 12px;
+  }
+  .hero-portrait {
+    max-width: 420px;
+    justify-self: center;
+  }
+  .portrait-frame > img {
+    height: auto;
+    aspect-ratio: 0.82;
+    object-position: center 12%;
+  }
+  .portrait-caption {
+    padding: 18px 16px;
+  }
+  .caption-icon {
+    width: 38px;
+    height: 38px;
+  }
+  .portrait-caption strong {
+    font-size: 13px;
+  }
+  .portrait-caption > div > span {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+  .section-pad {
+    padding-block: 64px;
+  }
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    margin-bottom: 18px;
+  }
+  h2 {
+    font-size: clamp(32px, 8.4vw, 40px);
+  }
+  .profile-layout {
+    gap: 32px;
+  }
+  .profile-facts > div {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-block: 24px;
+  }
+  .profile-facts dt {
+    margin: 0;
+    align-items: center;
+  }
+  .profile-facts dd {
+    font-size: 18px;
+  }
+  .profile-facts dd > span {
+    font-size: 14px;
+  }
+  .institution-link {
+    align-items: flex-start;
+    padding-block: 12px;
+  }
+  .institution-link .icon {
+    margin-top: 4px;
   }
   .education-grid {
     grid-template-columns: 1fr;
-    gap: 17px;
+    gap: 20px;
   }
   .education-card {
-    padding: 24px 25px 0;
-  }
-  .education-card h3 {
-    font-size: 37px;
-  }
-  .degree-type {
-    font-size: 8px;
-    margin-top: 26px;
-  }
-  .degree-label {
-    font-size: 10px;
-  }
-  .education-year {
-    font-size: 12px;
-  }
-  .study-field {
-    font-size: 12px;
+    padding: 28px 24px 0;
   }
   .university {
-    font-size: 11px;
-    padding-block: 20px;
-    margin-top: 25px;
+    min-height: 94px;
   }
   .thesis-link {
-    gap: 13px;
-    padding: 21px 18px;
-    margin-top: 21px;
+    gap: 12px;
+    padding: 24px 20px;
     align-items: flex-start;
   }
   .thesis-icon .icon {
     width: 22px;
     height: 22px;
-    margin-top: 4px;
-  }
-  .thesis-link small {
-    font-size: 7px;
-  }
-  .thesis-link strong {
-    font-size: 11px;
-  }
-  .thesis-link > span > span {
-    font-size: 9px;
-    line-height: 1.8;
-    margin-top: 7px;
+    margin-top: 3px;
   }
   .thesis-link > .icon {
     width: 16px;
     height: 16px;
-    margin-top: 4px;
+    margin-top: 3px;
   }
-  .research-section .section-top {
-    margin-bottom: 23px;
-  }
-  .research-section .section-top > .text-link {
-    margin-top: 21px;
-    max-width: none;
-    font-size: 10px;
+  .thesis-link strong {
+    font-size: 15px;
   }
   .research-intro {
-    font-size: 12px;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
   }
   .publication {
-    grid-template-columns: 1fr 33px;
-    column-gap: 14px;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    column-gap: 12px;
     row-gap: 12px;
-    padding-block: 24px;
+    padding-block: 28px;
   }
   .publication-year {
     grid-column: 1;
-    font-size: 10px;
     margin: 0;
+    font-size: 13px;
   }
   .publication > div {
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 2;
   }
   .publication-topic {
-    font-size: 7px;
-    margin-bottom: 9px;
-    line-height: 1.8;
+    font-size: 11px;
+    line-height: 1.6;
   }
   .publication h3 {
-    font-size: 18px;
-    font-weight: 600;
-    letter-spacing: -0.45px;
-    line-height: 1.55;
-  }
-  .publication > div > p:last-child {
-    font-size: 9px;
-    margin-top: 10px;
-    line-height: 1.8;
+    font-size: 20px;
+    letter-spacing: -0.5px;
   }
   .publication-action {
-    grid-row: 2;
     grid-column: 2;
+    grid-row: 1;
     align-self: start;
-    margin-top: 26px;
-  }
-  .academic-profiles {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 26px;
   }
   .academic-profiles > a {
-    padding: 17px 18px;
-    gap: 14px;
-  }
-  .academic-symbol {
-    width: 36px;
-    height: 36px;
-    font-size: 19px;
-  }
-  .academic-symbol .icon {
-    width: 21px;
-    height: 21px;
-  }
-  .academic-profiles strong {
-    font-size: 12px;
-  }
-  .academic-profiles > a > div > span {
-    font-size: 9px;
-  }
-  .academic-profiles > a > .icon {
-    width: 15px;
-    height: 15px;
+    padding: 20px;
   }
   .softklinik-feature {
-    grid-template-columns: 1fr;
-    padding: 29px 25px 33px;
-    gap: 30px;
-    border-radius: 9px;
-  }
-  .venture-label {
-    font-size: 7px;
-    letter-spacing: 1px;
+    padding: 32px 24px;
+    gap: 32px;
+    border-radius: 12px;
   }
   .softklinik-copy h3 {
-    font-size: 41px;
-    margin-top: 18px;
+    font-size: 42px;
   }
-  .founder-role {
-    font-size: 11px;
-  }
-  .venture-description {
-    font-size: 12px;
-    margin-top: 21px;
-    max-width: none;
+  .venture-label {
+    font-size: 10px;
+    letter-spacing: 0.6px;
   }
   .service-tags {
-    margin-top: 21px;
-    gap: 7px;
+    gap: 8px;
   }
   .service-tags > span {
-    font-size: 8px;
-    padding: 4px 8px;
+    font-size: 11px;
+    padding: 5px 8px;
   }
   .softklinik-copy .button {
-    margin-top: 25px;
-  }
-  .softklinik-preview {
-    margin: 0 -9px;
-    transform: rotate(-2deg);
-  }
-  .preview-bar {
-    font-size: 7px;
-    padding: 11px;
-  }
-  .preview-caption {
-    font-size: 6px;
+    width: 100%;
   }
   .softklinik-preview img {
-    aspect-ratio: 1.55;
+    aspect-ratio: 1.44;
   }
-
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 37px;
+  .preview-bar {
+    padding: 10px;
+    font-size: 10px;
+    gap: 8px;
+  }
+  .preview-caption {
+    font-size: 9px;
+    letter-spacing: 0.4px;
   }
   .contact-copy h2 {
-    font-size: 40px;
-  }
-  .contact-copy > p:not(.section-label) {
-    font-size: 12px;
-    max-width: 350px;
+    font-size: 38px;
   }
   .contact-copy .button {
-    margin-top: 27px;
-  }
-  .phone-row {
-    padding-bottom: 24px;
+    width: 100%;
   }
   .phone-row a {
-    font-size: 27px;
-  }
-  .phone-row > div > span {
-    font-size: 8px;
-  }
-  .phone-row > button {
-    width: 37px;
-    height: 37px;
-  }
-  .contact-link {
-    padding-block: 22px;
-  }
-  .contact-link > span {
-    font-size: 13px;
-  }
-  .contact-link small {
-    font-size: 7px;
+    font-size: clamp(24px, 6.8vw, 30px);
   }
   .footer-inner {
-    flex-wrap: wrap;
-    padding-block: 25px;
-    gap: 24px;
+    gap: 16px;
+    padding-block: 28px;
   }
   .footer-inner .brand {
     width: 100%;
   }
   .footer-inner .brand-name {
-    font-size: 11px;
+    font-size: 12px;
   }
   .footer-inner .brand-name > span {
-    font-size: 6px;
+    font-size: 9px;
   }
   .footer-inner p {
-    font-size: 8px;
-  }
-  .back-top {
-    font-size: 8px;
-    gap: 9px;
-    margin-left: auto;
-  }
-  .back-top .icon {
-    width: 13px;
-    height: 13px;
+    width: 100%;
   }
 }
 @media (max-width: 360px) {
   .container {
-    width: calc(100% - 32px);
+    width: calc(100% - 40px);
   }
-  .eyebrow {
-    font-size: 7px;
-    letter-spacing: 0.55px;
-  }
-  h1 {
-    font-size: 54px;
-  }
-  .hero-lead {
-    font-size: 21px;
-  }
-  .hero-actions {
-    gap: 8px;
-  }
-  .button {
-    font-size: 9px;
-    padding: 13px 12px;
-    gap: 12px;
-  }
-  .hero-socials {
-    gap: 15px;
-  }
-  .portrait-frame > img {
-    height: 365px;
-  }
-  .portrait-caption strong {
-    font-size: 9px;
-  }
-  .portrait-caption > div > span {
-    font-size: 6px;
-  }
-  h2 {
-    font-size: 31px;
-  }
-  .profile-facts > div {
-    grid-template-columns: 91px 1fr;
-    gap: 10px;
-  }
-  .profile-facts dd {
-    font-size: 14px;
-  }
-  .profile-facts dt {
-    font-size: 8px;
-  }
-  .institution-link {
-    font-size: 8px;
-  }
-  .softklinik-feature {
-    padding: 26px 21px 29px;
-  }
-  .venture-description {
+  .brand-name {
     font-size: 11px;
   }
-  .phone-row a {
-    font-size: 24px;
+  .brand-name > span {
+    font-size: 8px;
+  }
+  .portrait-caption {
+    gap: 10px;
+    padding: 16px 12px;
+  }
+  .portrait-location {
+    padding-inline: 16px;
+    font-size: 11px;
+  }
+  .softklinik-feature {
+    padding: 28px 20px;
   }
   .publication h3 {
-    font-size: 16px;
+    font-size: 19px;
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -1978,5 +1593,9 @@ h2 > span {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+  .button:hover,
+  .softklinik-preview:hover {
+    transform: none;
   }
 }

@@ -1,10 +1,14 @@
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#navigation");
+const header = document.querySelector(".site-header");
+const desktopNavigation = window.matchMedia("(min-width: 1025px)");
+let focusedNavigationLink;
 
-function closeMenu() {
+function closeMenu({ restoreFocus = false } = {}) {
   menuButton.setAttribute("aria-expanded", "false");
   menuButton.setAttribute("aria-label", "Buka navigasi");
   navigation.classList.remove("open");
+  if (restoreFocus && !desktopNavigation.matches) menuButton.focus();
 }
 
 menuButton.addEventListener("click", () => {
@@ -16,39 +20,74 @@ menuButton.addEventListener("click", () => {
   );
   navigation.classList.toggle("open", !isOpen);
 });
-navigation
-  .querySelectorAll("a")
-  .forEach((link) => link.addEventListener("click", closeMenu));
+navigation.querySelectorAll("a").forEach((link) =>
+  link.addEventListener("click", (event) => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)
+      return;
+    const target = document.querySelector(link.getAttribute("href"));
+    closeMenu();
+    const heading = target?.querySelector("h2") || target;
+    if (!heading) return;
+    heading.setAttribute("tabindex", "-1");
+    requestAnimationFrame(() => heading.focus({ preventScroll: true }));
+  }),
+);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && navigation.classList.contains("open")) {
-    closeMenu();
-    menuButton.focus();
+    closeMenu({ restoreFocus: true });
   }
 });
 document.addEventListener("click", (event) => {
-  if (!event.target.closest(".site-header")) closeMenu();
+  if (!header.contains(event.target)) closeMenu();
 });
-window.matchMedia("(min-width: 861px)").addEventListener("change", closeMenu);
+document.addEventListener("focusin", (event) => {
+  focusedNavigationLink = navigation.contains(event.target)
+    ? event.target
+    : null;
+  if (!header.contains(event.target)) closeMenu();
+});
+desktopNavigation.addEventListener("change", () => {
+  closeMenu({
+    restoreFocus:
+      Boolean(focusedNavigationLink) ||
+      navigation.contains(document.activeElement),
+  });
+});
 
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      const visible = entries.filter((entry) => entry.isIntersecting);
-      if (!visible.length) return;
-      const id = visible[visible.length - 1].target.id;
-      navigation.querySelectorAll("a").forEach((link) => {
-        const active = link.getAttribute("href") === `#${id}`;
-        link.classList.toggle("active", active);
-        if (active) link.setAttribute("aria-current", "location");
-        else link.removeAttribute("aria-current");
-      });
-    },
-    { rootMargin: "-15% 0px -65% 0px" },
-  );
-  document
-    .querySelectorAll("main section[id]")
-    .forEach((section) => observer.observe(section));
+const sections = [...document.querySelectorAll("main section[id]")];
+const navigationLinks = [...navigation.querySelectorAll("a")];
+let navigationFrame;
+function updateActiveSection() {
+  navigationFrame = null;
+  const marker = header.getBoundingClientRect().height + 32;
+  let activeSection = sections[0];
+  for (const section of sections) {
+    if (section.getBoundingClientRect().top > marker) break;
+    activeSection = section;
+  }
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight - 2
+  )
+    activeSection = sections.at(-1);
+  navigationLinks.forEach((link) => {
+    const active = link.getAttribute("href") === `#${activeSection?.id}`;
+    link.classList.toggle("active", active);
+    if (active) link.setAttribute("aria-current", "location");
+    else link.removeAttribute("aria-current");
+  });
 }
+function scheduleNavigationUpdate() {
+  if (navigationFrame == null)
+    navigationFrame = requestAnimationFrame(updateActiveSection);
+}
+window.addEventListener("scroll", scheduleNavigationUpdate, { passive: true });
+window.addEventListener("resize", scheduleNavigationUpdate);
+window.addEventListener("hashchange", scheduleNavigationUpdate);
+window.addEventListener("pageshow", scheduleNavigationUpdate);
+window.addEventListener("load", scheduleNavigationUpdate);
+document.fonts?.ready.then(scheduleNavigationUpdate);
+scheduleNavigationUpdate();
 
 document.querySelector("#year").textContent = new Intl.DateTimeFormat("en", {
   year: "numeric",

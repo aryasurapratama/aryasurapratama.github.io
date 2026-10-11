@@ -6,6 +6,8 @@ Situs: **https://aryasurapratama.github.io/**.
 
 Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
 
+Tipografi isi 16px, tombol minimal 48px, dan kontrol sentuh minimal 44px. Layout menyesuaikan lebar layar tanpa mengecilkan teks isi. Navigasi mendukung keyboard, penanda bagian aktif, dan menu yang dapat digulir pada layar landscape. Ringkasan audit tersedia di [UI_UX_AUDIT.md](UI_UX_AUDIT.md).
+
 ## Menjalankan lokal
 
 Memerlukan Node.js 18 atau lebih baru. Tidak perlu menginstal dependency aplikasi.
