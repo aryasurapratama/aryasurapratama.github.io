@@ -44,3 +44,14 @@ Perbandingan tinggi halaman dengan viewport setinggi 900px:
 | 320px       |  7368px |  5882px |         20% |
 
 Ikon SVG yang terlihat diperiksa agar benar-benar dirender, termasuk ikon penutup menu. Layout, navigasi, fokus, salin nomor, pembesaran teks, menu landscape, dan aksesibilitas diuji ulang setelah perubahan.
+
+## Bahasa Indonesia dan English
+
+- Konten lengkap tersedia pada `/` (Indonesia) dan `/en/` (English), termasuk navigasi, label aksesibilitas, deskripsi gambar, metadata, dan halaman 404.
+- Tombol EN/ID selalu terlihat di header, memiliki area sentuh 44px, dan mempertahankan bagian yang dibuka saat JavaScript aktif. Kedua versi tetap dapat dibaca dan dipilih tanpa JavaScript.
+- Nama **Arya Sura Pratama, M.Kom.**, gelar S.Kom./M.Kom., nama institusi, tahun pendidikan, dan tautan sumber tetap konsisten.
+- Kedua versi menggunakan canonical sendiri dan tautan `hreflang` timbal balik; sitemap memuat kedua alamat beserta alternatif bahasanya.
+
+Playwright/Chromium menguji setiap bahasa pada 320, 390, 620, 768, 860, 1024, 1025, 1440, dan 1920 piksel. Tidak ada scroll horizontal, teks utama terpotong, atau header bertumpuk. Semua lima tujuan navigasi, fokus keyboard, pergantian bahasa dua arah, salin nomor beserta pesan cadangan, dan menu landscape lulus.
+
+Pemeriksaan axe pada 320, 1025, dan 1440 piksel di masing-masing bahasa tidak menemukan pelanggaran pada aturan yang diuji. Pembesaran teks isi dan penyesuaian jarak teks diperiksa pada 390 piksel. Kedua bahasa tanpa JavaScript lulus pada 320, 390, 1024, dan 1440 piksel. Halaman 404 dan respons 404 bawaan GitHub Pages untuk URL English juga diperiksa. Tidak ditemukan galat JavaScript atau kegagalan pemuatan aset.

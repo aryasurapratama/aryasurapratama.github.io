@@ -16,6 +16,7 @@
     display: none;
   }
   .navigation {
+    order: 3;
     display: flex;
     position: static;
     flex-direction: row;

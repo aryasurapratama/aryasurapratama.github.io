@@ -9,6 +9,7 @@ await mkdir(output, { recursive: true });
 for (const entry of [
   "index.html",
   "404.html",
+  "en",
   "assets",
   "robots.txt",
   "sitemap.xml",

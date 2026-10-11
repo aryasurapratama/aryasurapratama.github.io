@@ -2,11 +2,25 @@ const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector("#navigation");
 const header = document.querySelector(".site-header");
 const desktopNavigation = window.matchMedia("(min-width: 1025px)");
+const english = document.documentElement.lang === "en";
+const messages = english
+  ? {
+      openMenu: "Open navigation",
+      closeMenu: "Close navigation",
+      copied: "WhatsApp number copied.",
+      phone: "WhatsApp number: 0822 3262 3434",
+    }
+  : {
+      openMenu: "Buka navigasi",
+      closeMenu: "Tutup navigasi",
+      copied: "Nomor WhatsApp berhasil disalin.",
+      phone: "Nomor WhatsApp: 0822 3262 3434",
+    };
 let focusedNavigationLink;
 
 function closeMenu({ restoreFocus = false } = {}) {
   menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Buka navigasi");
+  menuButton.setAttribute("aria-label", messages.openMenu);
   navigation.classList.remove("open");
   if (restoreFocus && !desktopNavigation.matches) menuButton.focus();
 }
@@ -16,7 +30,7 @@ menuButton.addEventListener("click", () => {
   menuButton.setAttribute("aria-expanded", String(!isOpen));
   menuButton.setAttribute(
     "aria-label",
-    isOpen ? "Buka navigasi" : "Tutup navigasi",
+    isOpen ? messages.openMenu : messages.closeMenu,
   );
   navigation.classList.toggle("open", !isOpen);
 });
@@ -32,6 +46,18 @@ navigation.querySelectorAll("a").forEach((link) =>
     requestAnimationFrame(() => heading.focus({ preventScroll: true }));
   }),
 );
+// Keep the current section when moving between the two static language pages.
+const languageSwitch = document.querySelector(".language-switch");
+function updateLanguageDestination() {
+  const destination = new URL(
+    languageSwitch.getAttribute("href"),
+    location.href,
+  );
+  destination.hash = location.hash;
+  languageSwitch.setAttribute("href", destination.pathname + destination.hash);
+}
+window.addEventListener("hashchange", updateLanguageDestination);
+updateLanguageDestination();
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && navigation.classList.contains("open")) {
     closeMenu({ restoreFocus: true });
@@ -107,8 +133,8 @@ document.querySelector("#copy-phone").addEventListener("click", async () => {
     if (!navigator.clipboard?.writeText)
       throw new Error("Clipboard unavailable");
     await navigator.clipboard.writeText("082232623434");
-    showToast("Nomor WhatsApp berhasil disalin.");
+    showToast(messages.copied);
   } catch {
-    showToast("Nomor WhatsApp: 0822 3262 3434");
+    showToast(messages.phone);
   }
 });

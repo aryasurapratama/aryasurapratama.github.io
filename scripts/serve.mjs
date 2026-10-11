@@ -22,7 +22,7 @@ const server = http.createServer(async (request, response) => {
     const requested = decodeURIComponent(
       new URL(request.url, "http://localhost").pathname,
     );
-    const file = path.resolve(
+    let file = path.resolve(
       root,
       `.${requested === "/" ? "/index.html" : requested}`,
     );
@@ -33,7 +33,19 @@ const server = http.createServer(async (request, response) => {
       response.writeHead(403).end("Forbidden");
       return;
     }
-    const info = await stat(file);
+    let info = await stat(file);
+    if (info.isDirectory()) {
+      if (!requested.endsWith("/")) {
+        const location = new URL(request.url, "http://localhost");
+        location.pathname += "/";
+        response
+          .writeHead(301, { Location: location.pathname + location.search })
+          .end();
+        return;
+      }
+      file = path.join(file, "index.html");
+      info = await stat(file);
+    }
     if (!info.isFile()) throw new Error("Not a file");
     response.writeHead(200, {
       "Content-Type": types[path.extname(file)] || "application/octet-stream",
@@ -44,7 +56,13 @@ const server = http.createServer(async (request, response) => {
     response.end(request.method === "HEAD" ? undefined : content);
   } catch {
     response.writeHead(404, { "Content-Type": "text/html; charset=utf-8" });
-    response.end(await readFile(path.join(root, "404.html")));
+    const english = new URL(
+      request.url,
+      "http://localhost",
+    ).pathname.startsWith("/en/");
+    response.end(
+      await readFile(path.join(root, english ? "en/404.html" : "404.html")),
+    );
   }
 });
 server.listen(port, "127.0.0.1", () =>

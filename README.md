@@ -4,6 +4,8 @@ Website personal **Arya Sura Pratama, M.Kom.**, dosen tetap di **Jinarakkhita Bu
 
 Situs: **https://aryasurapratama.github.io/**.
 
+Bahasa Indonesia tersedia di `/`, dan English di `/en/`. Tombol **EN / ID** di header berpindah bahasa sambil mempertahankan bagian yang sedang dibuka. Kedua halaman berisi konten lengkap tanpa JavaScript, dengan `lang`, canonical, metadata, dan tautan `hreflang` masing-masing. Nama pribadi, gelar resmi, dan nama institusi tetap dipertahankan.
+
 Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
 
 Tipografi isi 16px, tombol minimal 48px, dan kontrol sentuh minimal 44px. Layout menyesuaikan lebar layar tanpa mengecilkan teks isi. Navigasi mendukung keyboard, penanda bagian aktif, dan menu yang dapat digulir pada layar landscape. Ringkasan audit tersedia di [UI_UX_AUDIT.md](UI_UX_AUDIT.md).
@@ -44,12 +46,14 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 ## Berkas utama
 
 - `index.html`: profil, pendidikan, publikasi, SoftKlinik, kontak, dan metadata SEO.
+- `en/index.html`: versi English; perbarui kedua halaman jika isi profil berubah.
 - `assets/style.css`: tampilan desktop, tablet, dan seluler.
 - `assets/main.js`: menu, penanda navigasi aktif, dan salin nomor WhatsApp.
 - `assets/profile.jpg`: foto formal terbaru yang diberikan oleh pemilik, disiapkan untuk web.
 - `assets/softklinik-preview.png`: tangkapan layar website resmi SoftKlinik.
 - `assets/icons/`: ikon asli merek, sprite SVG antarmuka, sumber, dan lisensi.
 - `404.html`: halaman tautan tidak ditemukan.
+- `en/404.html` dan `assets/not-found.js`: halaman 404 English dan penyesuaian bahasa untuk URL English yang tidak ditemukan di GitHub Pages.
 - `sitemap.xml` dan `robots.txt`: pengindeksan situs.
 
 ## Sumber konten
@@ -58,7 +62,7 @@ Status dosen tetap, homebase, gelar, riwayat S1/S2 beserta tahun, kontak WhatsAp
 
 Foto formal terbaru diberikan langsung oleh pemilik. Peran Founder & Technology Lead serta deskripsi usaha berasal dari [SoftKlinik](https://softklinik.my.id/tentang-kami). Sampul SoftKlinik merupakan tangkapan layar situs aslinya.
 
-Publikasi pilihan ditautkan ke sumber penerbit; judul pada situs adalah ringkasan topik dalam Bahasa Indonesia, bukan transkripsi judul resmi:
+Publikasi pilihan ditautkan ke sumber penerbit; judul pada kedua versi bahasa merupakan ringkasan topik, bukan transkripsi judul resmi:
 
 - [Literasi digital, kesiapan belajar, dan pembelajaran AI (2025)](https://jurnalp4i.com/index.php/edutech/article/view/7972).
 - [Mindfulness dan kualitas pembelajaran (2024)](https://jurnal.uns.ac.id/ijsascs/article/view/95098).

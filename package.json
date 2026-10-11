@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "build": "node scripts/build.mjs",
-    "check": "node --check assets/main.js && node --check scripts/build.mjs && node --check scripts/serve.mjs"
+    "check": "node --check assets/main.js && node --check assets/not-found.js && node --check scripts/build.mjs && node --check scripts/serve.mjs"
   },
   "engines": {
     "node": ">=18"
