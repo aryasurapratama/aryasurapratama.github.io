@@ -8,6 +8,8 @@ Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pend
 
 Tipografi isi 16px, tombol minimal 48px, dan kontrol sentuh minimal 44px. Layout menyesuaikan lebar layar tanpa mengecilkan teks isi. Navigasi mendukung keyboard, penanda bagian aktif, dan menu yang dapat digulir pada layar landscape. Ringkasan audit tersedia di [UI_UX_AUDIT.md](UI_UX_AUDIT.md).
 
+Tautan akademik menggunakan ikon asli Google Scholar, SINTA, dan ORCID. Ikon antarmuka memakai Lucide SVG; ikon merek sosial memakai geometri Simple Icons. Aset, sumber, dan lisensi disimpan lokal di `assets/icons/`. Jarak serta judul bagian dipadatkan, dan tautan akademik berulang di bawah publikasi dihapus.
+
 ## Menjalankan lokal
 
 Memerlukan Node.js 18 atau lebih baru. Tidak perlu menginstal dependency aplikasi.
@@ -46,6 +48,7 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 - `assets/main.js`: menu, penanda navigasi aktif, dan salin nomor WhatsApp.
 - `assets/profile.jpg`: foto formal terbaru yang diberikan oleh pemilik, disiapkan untuk web.
 - `assets/softklinik-preview.png`: tangkapan layar website resmi SoftKlinik.
+- `assets/icons/`: ikon asli merek, sprite SVG antarmuka, sumber, dan lisensi.
 - `404.html`: halaman tautan tidak ditemukan.
 - `sitemap.xml` dan `robots.txt`: pengindeksan situs.
 
