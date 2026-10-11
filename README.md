@@ -4,7 +4,7 @@ Website personal **Arya Sura Pratama, M.Kom.**, dosen tetap di **Jinarakkhita Bu
 
 Situs: **https://aryasurapratama.github.io/**.
 
-Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, proyek pengembangan, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
+Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
 
 ## Menjalankan lokal
 
@@ -39,7 +39,7 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 
 ## Berkas utama
 
-- `index.html`: profil, pendidikan, publikasi, proyek, kontak, dan metadata SEO.
+- `index.html`: profil, pendidikan, publikasi, SoftKlinik, kontak, dan metadata SEO.
 - `assets/style.css`: tampilan desktop, tablet, dan seluler.
 - `assets/main.js`: menu, penanda navigasi aktif, dan salin nomor WhatsApp.
 - `assets/profile.jpg`: foto formal terbaru yang diberikan oleh pemilik, disiapkan untuk web.
@@ -51,7 +51,7 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 
 Status dosen tetap, homebase, gelar, riwayat S1/S2 beserta tahun, kontak WhatsApp, dan tautan profil diberikan oleh pemilik. Data pendidikan tidak diklaim sebagai hasil verifikasi langsung melalui PDDikti.
 
-Foto formal terbaru diberikan langsung oleh pemilik. Peran Founder & Technology Lead serta deskripsi usaha berasal dari [SoftKlinik](https://softklinik.my.id/tentang-kami). Sampul SoftKlinik merupakan tangkapan layar situs aslinya. Proyek pribadi menggunakan repositori [ISambuddha 2023](https://github.com/aryasurapratama/IsamBuddha-2023) dan [WA Autokick](https://github.com/aryasurapratama/wa-autokick).
+Foto formal terbaru diberikan langsung oleh pemilik. Peran Founder & Technology Lead serta deskripsi usaha berasal dari [SoftKlinik](https://softklinik.my.id/tentang-kami). Sampul SoftKlinik merupakan tangkapan layar situs aslinya.
 
 Publikasi pilihan ditautkan ke sumber penerbit; judul pada situs adalah ringkasan topik dalam Bahasa Indonesia, bukan transkripsi judul resmi:
 
