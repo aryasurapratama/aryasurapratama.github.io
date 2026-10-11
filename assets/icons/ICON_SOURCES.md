@@ -33,6 +33,8 @@ Pinned upstream revision: `dc7b10662a0a2cfdfc9305e2a2b06c023c30724a`. The downlo
 
 The Simple Icons project is published under CC0, included in [`SIMPLE_ICONS_LICENSE.md`](SIMPLE_ICONS_LICENSE.md). The [upstream disclaimer](https://github.com/simple-icons/simple-icons/blob/dc7b10662a0a2cfdfc9305e2a2b06c023c30724a/DISCLAIMER.md), copied in [`SIMPLE_ICONS_DISCLAIMER.md`](SIMPLE_ICONS_DISCLAIMER.md), makes clear that brand trademarks and any additional terms are retained by their owners. These assets identify links to the owner's profiles; they do not imply platform endorsement.
 
+At the site owner's request, [`../favicon.svg`](../favicon.svg) also uses the unchanged GitHub path from `github.svg`, scaled proportionally in white on the site's navy background. All Indonesian and English pages, including their 404 pages, reference the same versioned favicon.
+
 Official brand references recorded by Simple Icons:
 
 - GitHub: [official logos](https://github.com/logos).
