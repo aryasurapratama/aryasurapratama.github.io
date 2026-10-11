@@ -27,6 +27,22 @@ body {
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
 }
+.portfolio-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-page #main {
+  flex: 1;
+}
+.page-education #main,
+.page-technology #main {
+  background: var(--pale);
+}
+.page-contact #main {
+  background: var(--navy);
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -112,6 +128,11 @@ a {
   gap: 8px;
   flex-shrink: 0;
 }
+.mobile-page-label {
+  display: none;
+  font-size: 14px;
+  font-weight: 700;
+}
 .language-switch {
   display: inline-flex;
   align-items: center;
@@ -160,6 +181,9 @@ a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+}
+.navigation > a[aria-current="page"]:not(.nav-contact) {
+  box-shadow: inset 0 -2px currentColor;
 }
 .navigation > a:hover,
 .navigation > a.active {
@@ -405,6 +429,16 @@ h2 {
 h2 > span {
   color: var(--blue);
 }
+.page-title {
+  font-size: clamp(32px, 3vw, 42px);
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+.page-title > span {
+  color: var(--blue);
+}
 .section-heading > p:not(.section-label) {
   font-size: 16px;
   color: var(--muted);
@@ -413,7 +447,7 @@ h2 > span {
   margin-top: 16px;
 }
 .profile-section {
-  border-top: 1px solid var(--line);
+  border-top: 0;
 }
 .profile-layout {
   display: grid;
@@ -535,7 +569,7 @@ h2 > span {
   color: var(--muted);
   margin-top: 16px;
 }
-.education-card h3 {
+.education-card h2 {
   font-size: 34px;
   font-weight: 600;
   margin-top: 8px;
@@ -663,7 +697,7 @@ h2 > span {
   margin-bottom: 0;
   line-height: 1.6;
 }
-.publication h3 {
+.publication h2 {
   font-size: 21px;
   font-weight: 600;
   letter-spacing: -0.4px;
@@ -692,7 +726,7 @@ h2 > span {
   width: 19px;
   height: 19px;
 }
-.publication:hover h3 {
+.publication:hover h2 {
   color: var(--blue);
 }
 .publication:hover .publication-action {
@@ -730,13 +764,13 @@ h2 > span {
   border-radius: 50%;
   background: #8caaf1;
 }
-.softklinik-copy h3 {
+.softklinik-copy h2 {
   font-size: 42px;
   font-weight: 600;
   letter-spacing: -1.7px;
   margin-top: 14px;
 }
-.softklinik-copy h3 > span {
+.softklinik-copy h2 > span {
   color: #94b3ff;
 }
 .founder-role {
@@ -839,10 +873,10 @@ h2 > span {
 .contact-section .section-label {
   color: #b8cdf5;
 }
-.contact-copy h2 {
+.contact-copy .page-title {
   font-size: 42px;
 }
-.contact-copy h2 > span {
+.contact-copy .page-title > span {
   color: #a9c2f6;
 }
 .contact-copy > p:not(.section-label) {
@@ -1020,6 +1054,9 @@ svg.brand-icon {
   .header-actions {
     margin-left: auto;
   }
+  .mobile-page-label {
+    display: block;
+  }
   .menu-toggle {
     display: flex;
     width: 44px;
@@ -1123,7 +1160,7 @@ svg.brand-icon {
   .contact-layout {
     gap: 40px;
   }
-  .contact-copy h2 {
+  .contact-copy .page-title {
     font-size: 42px;
   }
   .footer-inner {
@@ -1242,6 +1279,9 @@ svg.brand-icon {
   h2 {
     font-size: clamp(30px, 7.5vw, 36px);
   }
+  .page-title {
+    font-size: clamp(30px, 7.5vw, 36px);
+  }
   .profile-layout {
     gap: 32px;
   }
@@ -1317,7 +1357,7 @@ svg.brand-icon {
     font-size: 11px;
     line-height: 1.6;
   }
-  .publication h3 {
+  .publication h2 {
     font-size: 20px;
     letter-spacing: -0.5px;
   }
@@ -1332,7 +1372,7 @@ svg.brand-icon {
     gap: 24px;
     border-radius: 12px;
   }
-  .softklinik-copy h3 {
+  .softklinik-copy h2 {
     font-size: 42px;
   }
   .venture-label {
@@ -1361,7 +1401,7 @@ svg.brand-icon {
     font-size: 9px;
     letter-spacing: 0.4px;
   }
-  .contact-copy h2 {
+  .contact-copy .page-title {
     font-size: 34px;
   }
   .contact-copy .button {
@@ -1390,7 +1430,7 @@ svg.brand-icon {
   .softklinik-feature {
     padding: 24px 20px;
   }
-  .publication h3 {
+  .publication h2 {
     font-size: 19px;
   }
 }

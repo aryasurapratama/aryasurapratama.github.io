@@ -2,8 +2,10 @@ import http from "node:http";
 import { readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { generateSite } from "./generate.mjs";
 
 const root = path.resolve(fileURLToPath(new URL("../", import.meta.url)));
+await generateSite();
 const port = Number(process.env.PORT || 4173);
 const types = {
   ".html": "text/html; charset=utf-8",

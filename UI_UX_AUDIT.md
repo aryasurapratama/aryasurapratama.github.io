@@ -66,3 +66,23 @@ Pemeriksaan axe pada 320, 1025, dan 1440 piksel di masing-masing bahasa tidak me
 Kedua bahasa diuji pada lebar 320, 390, 620, 768, 800, 860, 1024, 1025, 1440, dan 1920px. Layout, semua tujuan navigasi, fokus, target sentuh, keseragaman kontak, tampilan tombol utama, serta ikon kembali ke atas diperiksa. Pengujian tambahan mencakup pergantian bahasa, menu landscape, pembesaran teks, kedua halaman 404, dan navigasi tanpa JavaScript.
 
 Pemeriksaan axe pada 320, 1025, dan 1440px di masing-masing bahasa tidak menemukan pelanggaran pada aturan yang diuji. Pemeriksaan visual dilakukan pada desktop dan ponsel. Verifikasi browser ini memakai Chromium, bukan seluruh browser atau perangkat.
+
+## Halaman terpisah — 11 Oktober 2026
+
+- Beranda, Profil, Pendidikan, Penelitian, Karya, dan Kontak mempunyai URL tersendiri. Setiap halaman hanya berisi konten menu yang dipilih; konten akademik dan SoftKlinik tetap dipertahankan. Tersedia enam halaman Indonesia dan enam halaman English.
+- Menu Beranda mengembalikan pengguna ke halaman awal. Halaman aktif ditandai dengan warna, garis bawah, dan `aria-current="page"`; tombol Kontak aktif memakai latar biru. Pada ponsel, nama halaman terlihat di header.
+- Bendera bahasa membuka halaman yang setara, misalnya `/pendidikan/` ↔ `/en/education/`, tanpa bergantung pada JavaScript. Semua menu memakai tautan HTML biasa dan mendukung reload, bookmark, serta riwayat browser.
+- Setiap halaman memiliki satu `h1`, hierarki judul berurutan, judul browser dan deskripsi yang sesuai, canonical sendiri, serta alternatif bahasa timbal balik. Sitemap memuat seluruh 12 alamat. Tautan bagian lama seperti `/#penelitian` diarahkan ke halaman yang sesuai ketika JavaScript aktif, dengan parameter URL tetap dipertahankan.
+- Header, footer, dan kontrol bahasa berasal dari satu template. Konten kedua bahasa tersimpan di `src/content/`; generator menghasilkan HTML statis tanpa dependency aplikasi. Foto hanya diprioritaskan pemuatannya pada halaman Beranda.
+- Ikon kembali ke atas bekerja pada setiap halaman dan mengembalikan fokus ke `h1`. Navigasi ponsel tetap mendukung Escape, fokus keyboard, dan gulir pada layar landscape. Format kontak serta aset ikon resmi dipertahankan.
+
+Verifikasi Playwright/Chromium:
+
+- 96 pemeriksaan layout: seluruh 12 halaman pada 320, 390, 620, 768, 860, 1024, 1025, dan 1440px. Tidak ada scroll horizontal atau judul/kartu/tombol utama keluar dari viewport.
+- 20 alur navigasi melalui menu, pergantian bahasa dua arah, dan reload pada ponsel serta desktop; kembali lewat riwayat browser juga diperiksa.
+- 24 pemindaian axe: seluruh halaman pada 320 dan 1440px, tanpa pelanggaran pada aturan yang diuji.
+- 30 alur halaman tanpa JavaScript pada 320, 1024, dan 1440px, termasuk pergantian bahasa dan penanda menu aktif.
+- Sepuluh tautan bagian lama diperiksa, beserta normalisasi trailing slash, dua bahasa halaman 404, navigasi keyboard, ikon mengambang, pembesaran teks, dan menu landscape 667 × 320px.
+- Tidak ditemukan galat JavaScript atau kegagalan aset dalam pemeriksaan halaman utama. `npm run check` dan `npm run build` lulus. Screenshot desktop serta ponsel ditinjau secara visual.
+
+Catatan bagian audit sebelumnya merekam versi halaman tunggal. Struktur saat ini menggunakan halaman terpisah. Pengujian ini menggunakan Chromium dan pemeriksaan otomatis; hasilnya bukan penilaian mutlak untuk seluruh perangkat atau pengguna.

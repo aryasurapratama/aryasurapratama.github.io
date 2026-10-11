@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="{{lang}}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="{{description}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{locale}}" />
+    <meta property="og:locale:alternate" content="{{alternateLocale}}" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{canonical}}" />
+    <meta
+      property="og:image"
+      content="https://aryasurapratama.github.io/assets/profile.jpg?v=3"
+    />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="{{canonical}}" />
+    <link rel="alternate" hreflang="id" href="{{indonesianUrl}}" />
+    <link rel="alternate" hreflang="en" href="{{englishUrl}}" />
+    <link rel="alternate" hreflang="x-default" href="{{indonesianUrl}}" />
+    <link rel="icon" href="/assets/favicon.svg?v=2" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="/assets/fonts/manrope-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    {{imagePreload}}
+    <link rel="stylesheet" href="/assets/fonts.css" />
+    <link rel="stylesheet" href="/assets/style.css?v=10" />
+    <noscript><link rel="stylesheet" href="/assets/no-js.css?v=6" /></noscript>
+    <script src="/assets/main.js?v=6" defer></script>
+    <title>{{title}}</title>
+    <script type="application/ld+json">
+      {{structuredData}}
+    </script>
+  </head>
+  <body class="portfolio-page page-{{pageKey}}">
+    <a class="skip-link" href="#main">{{skipLabel}}</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <span class="mobile-page-label" aria-hidden="true">{{pageLabel}}</span>
+        <nav
+          id="navigation"
+          class="navigation"
+          aria-label="{{navigationLabel}}"
+        >
+          <!-- navigation -->
+        </nav>
+        <div class="header-actions">
+          <a
+            class="language-switch"
+            href="{{alternatePath}}"
+            hreflang="{{alternateLang}}"
+            lang="{{alternateLang}}"
+            aria-label="{{languageLabel}}"
+            title="{{languageLabel}}"
+          >
+            <img
+              class="language-flag"
+              src="/assets/icons/flag-{{flag}}.svg"
+              width="24"
+              height="18"
+              alt=""
+            />
+            <span class="language-label visually-hidden"
+              >{{alternateLangLabel}}</span
+            >
+          </a>
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="navigation"
+            aria-label="{{openMenuLabel}}"
+          >
+            <svg class="icon menu-icon" aria-hidden="true">
+              <use href="/assets/icons/ui.svg#icon-menu" />
+            </svg>
+            <svg class="icon close-icon" aria-hidden="true">
+              <use href="/assets/icons/ui.svg#icon-close" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <!-- content -->
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year">2026</span> Arya Sura Pratama, M.Kom.</p>
+      </div>
+    </footer>
+    <a
+      class="back-top"
+      href="#main"
+      aria-label="{{backTopLabel}}"
+      title="{{backTopLabel}}"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use href="/assets/icons/ui.svg#icon-right" />
+      </svg>
+    </a>
+  </body>
+</html>
