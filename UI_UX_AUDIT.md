@@ -101,3 +101,23 @@ Verifikasi Chromium mencakup 96 pemeriksaan layout pada seluruh halaman dengan l
 Delapan alur formulir pada kedua bahasa dan empat lebar layar menguji isian wajib, spasi kosong, pratinjau, fokus, teks khusus/Unicode, URL pesan, perubahan isian, organisasi opsional, dan kesinambungan topik saat berpindah bahasa. Pemeriksaan hanya menyiapkan tautan pesan; tidak mengirim percakapan. Dua halaman kontak tanpa JavaScript beserta FAQ diperiksa terpisah.
 
 Sebanyak 44 pemindaian axe pada keadaan halaman awal, panel terbuka, ikon mengambang terlihat, dan pratinjau formulir tidak menemukan pelanggaran pada aturan yang diuji. Tidak ditemukan galat JavaScript atau kegagalan aset dalam pengujian halaman utama. Screenshot desktop dan ponsel ditinjau. `npm run check` dan `npm run build` lulus.
+
+## Penyempurnaan mobile — 12 Oktober 2026
+
+- Daftar isi menggunakan grid dua kolom dengan permukaan tombol, jarak seragam, dan area sentuh minimal 44px. Label panjang dapat membungkus ketika teks diperbesar. Tautan daftar isi tetap menempatkan judul tujuan di bawah header.
+- Padding serta jarak kartu diringkas pada ponsel. Teks isi tetap 16px; identitas, konten akademik, ikon resmi, dan kedua bahasa dipertahankan.
+- Menu mobile menandai halaman aktif dengan latar lembut serta garis vertikal. Saat dibuka, fokus masuk ke tautan pertama. Panah atas/bawah, Home, End, dan Escape tersedia; membuka ulang menu mengembalikan gulir menu ke awal. Menu landscape tetap dapat digulir dalam viewport.
+- Pemilih topik kontak tetap memakai elemen `select` native, dengan ukuran yang konsisten di WebKit dan Chromium serta panah Lucide. Ukurannya mengikuti pembesaran teks. Latar area kontak ditegaskan pada komponen agar kontras terdeteksi konsisten di kedua mesin browser.
+- Tombol mengambang disembunyikan saat fokus berada dalam formulir atau pratinjau pesan, sehingga tidak menutupi tombol WhatsApp pada viewport yang pendek. Efek pergeseran hover dinonaktifkan pada perangkat sentuh.
+- Judul panjang serta label daftar isi dapat membungkus; kolom tahun pada timeline mengikuti ukuran teks. Pembesaran teks tidak menghasilkan scroll horizontal.
+
+Verifikasi pada Chromium dan WebKit dengan emulasi sentuh:
+
+- 240 pemeriksaan layout: seluruh 12 halaman, di setiap mesin browser, pada lebar 320, 360, 375, 390, 414, 430, 620, 768, 1024, dan 1440px. Tidak ditemukan scroll horizontal, teks utama keluar viewport, atau kontrol mobile berukuran kurang dari 44 × 44px. Isian formulir menggunakan font minimal 16px.
+- 48 pemindaian axe pada seluruh halaman di 320 dan 430px, tanpa pelanggaran pada aturan yang diuji.
+- Navigasi sentuh melalui seluruh menu, daftar isi, fokus pembuka menu, navigasi panah, Escape, menu landscape 667 × 320px, dan pembukaan ulang menu lulus. Chromium memeriksa urutan Tab; WebKit desktop memeriksa Option-Tab sesuai [pintasan Safari](https://support.apple.com/en-gb/guide/safari/cpsh003/mac), sedangkan emulasi mobile WebKit memeriksa navigasi panah.
+- Formulir dan pratinjau kedua bahasa lulus pada viewport 390 × 390px. Ikon kembali ke atas tidak menutupi pratinjau saat mendapat fokus; FAQ dan perpindahan fokus ke judul utama juga lulus. Pemeriksaan menyiapkan tautan WhatsApp tanpa mengirim pesan.
+- Pembesaran teks 200% dan penambahan jarak teks lulus pada seluruh halaman dalam kedua bahasa di kedua mesin browser. Seluruh 24 pemeriksaan halaman tanpa JavaScript tetap menyediakan navigasi dan tidak menghasilkan scroll horizontal.
+- Screenshot halaman, menu landscape, dan formulir pendek ditinjau secara visual. Tidak ditemukan galat JavaScript atau kegagalan aset dalam pengujian halaman utama. `npm run check`, `npm run build`, dan pemeriksaan whitespace Git lulus.
+
+Pengujian menggunakan emulasi browser, bukan perangkat iPhone atau Android fisik. Hasil di atas merupakan bukti pemeriksaan yang dilakukan, bukan skor mutlak untuk semua perangkat.

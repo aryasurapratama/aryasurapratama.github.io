@@ -40,6 +40,11 @@
     color: var(--blue);
     gap: 8px;
   }
+  .navigation > a[aria-current="page"]:not(.nav-contact) {
+    background: none;
+    border-radius: 0;
+    box-shadow: inset 0 -2px currentColor;
+  }
   .navigation .nav-contact.active {
     background: none;
     box-shadow: inset 0 -2px currentColor;

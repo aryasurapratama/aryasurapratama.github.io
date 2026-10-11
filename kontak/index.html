@@ -30,9 +30,9 @@
     />
 
     <link rel="stylesheet" href="/assets/fonts.css" />
-    <link rel="stylesheet" href="/assets/style.css?v=12" />
-    <noscript><link rel="stylesheet" href="/assets/no-js.css?v=6" /></noscript>
-    <script src="/assets/main.js?v=6" defer></script>
+    <link rel="stylesheet" href="/assets/style.css?v=13" />
+    <noscript><link rel="stylesheet" href="/assets/no-js.css?v=7" /></noscript>
+    <script src="/assets/main.js?v=7" defer></script>
     <script src="/assets/contact.js?v=1" defer></script>
     <title>Kontak | Arya Sura Pratama, M.Kom.</title>
     <script type="application/ld+json">
@@ -341,12 +341,17 @@
                       />
                     </div>
                     <div class="form-field full-width">
-                      <label for="brief-subject">Tujuan percakapan</label
-                      ><select id="brief-subject" name="subject">
-                        <option value="teaching">Pengajaran & TIK</option>
-                        <option value="research">Kolaborasi penelitian</option>
-                        <option value="development">Web & software</option>
-                      </select>
+                      <label for="brief-subject">Tujuan percakapan</label>
+                      <div class="select-control">
+                        <select id="brief-subject" name="subject">
+                          <option value="teaching">Pengajaran & TIK</option>
+                          <option value="research">Kolaborasi penelitian</option>
+                          <option value="development">Web & software</option>
+                        </select>
+                        <svg class="icon" aria-hidden="true">
+                          <use href="/assets/icons/ui.svg#icon-right" />
+                        </svg>
+                      </div>
                     </div>
                     <div class="form-field full-width">
                       <label for="brief-message">Ringkasan kebutuhan</label

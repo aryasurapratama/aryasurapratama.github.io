@@ -51,14 +51,43 @@ function closeMenu({ restoreFocus = false } = {}) {
   if (restoreFocus && !desktopNavigation.matches) menuButton.focus();
 }
 
+function openMenu({ lastLink = false } = {}) {
+  menuButton.setAttribute("aria-expanded", "true");
+  menuButton.setAttribute("aria-label", messages.closeMenu);
+  navigation.classList.add("open");
+  navigation.scrollTop = 0;
+  const links = navigation.querySelectorAll("a");
+  links[lastLink ? links.length - 1 : 0].focus({ preventScroll: !lastLink });
+}
+
 menuButton.addEventListener("click", () => {
   const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  menuButton.setAttribute(
-    "aria-label",
-    isOpen ? messages.openMenu : messages.closeMenu,
-  );
-  navigation.classList.toggle("open", !isOpen);
+  if (isOpen) closeMenu();
+  else openMenu();
+});
+menuButton.addEventListener("keydown", (event) => {
+  if (!["ArrowDown", "ArrowUp"].includes(event.key)) return;
+  event.preventDefault();
+  openMenu({ lastLink: event.key === "ArrowUp" });
+});
+navigation.addEventListener("keydown", (event) => {
+  if (
+    desktopNavigation.matches ||
+    !["ArrowDown", "ArrowUp", "Home", "End"].includes(event.key)
+  )
+    return;
+  const links = [...navigation.querySelectorAll("a")];
+  const current = links.indexOf(document.activeElement);
+  if (current < 0) return;
+  event.preventDefault();
+  const next =
+    event.key === "Home"
+      ? 0
+      : event.key === "End"
+        ? links.length - 1
+        : (current + (event.key === "ArrowDown" ? 1 : -1) + links.length) %
+          links.length;
+  links[next].focus();
 });
 navigation.querySelectorAll("a").forEach((link) =>
   link.addEventListener("click", (event) => {
@@ -103,7 +132,11 @@ backTop.addEventListener("blur", scheduleBackTopUpdate);
 let backTopFrame;
 function updateBackTop() {
   backTopFrame = null;
-  backTop.hidden = window.scrollY < 300 && document.activeElement !== backTop;
+  const editing =
+    document.activeElement.matches("input, textarea, select") ||
+    Boolean(document.activeElement.closest(".brief-panel"));
+  backTop.hidden =
+    (window.scrollY < 300 || editing) && document.activeElement !== backTop;
 }
 function scheduleBackTopUpdate() {
   if (backTopFrame == null) backTopFrame = requestAnimationFrame(updateBackTop);
@@ -112,6 +145,8 @@ window.addEventListener("scroll", scheduleBackTopUpdate, { passive: true });
 window.addEventListener("resize", scheduleBackTopUpdate);
 window.addEventListener("pageshow", scheduleBackTopUpdate);
 window.addEventListener("load", scheduleBackTopUpdate);
+document.addEventListener("focusin", scheduleBackTopUpdate);
+document.addEventListener("focusout", scheduleBackTopUpdate);
 document.fonts?.ready.then(scheduleBackTopUpdate);
 scheduleBackTopUpdate();
 

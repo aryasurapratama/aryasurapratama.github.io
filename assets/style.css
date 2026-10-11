@@ -67,6 +67,7 @@ h2,
 h3 {
   letter-spacing: -0.045em;
   line-height: 1.2;
+  overflow-wrap: anywhere;
 }
 ::selection {
   background: #dce7ff;
@@ -524,6 +525,10 @@ h2 > span {
   gap: 32px;
   margin-bottom: 24px;
 }
+.section-top > div {
+  min-width: 0;
+  max-width: 100%;
+}
 .section-summary {
   color: var(--muted);
   font-size: 15px;
@@ -866,6 +871,7 @@ h2 > span {
 }
 .contact-layout {
   display: grid;
+  background: var(--navy);
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   gap: 64px;
@@ -998,9 +1004,11 @@ h2 > span {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
+  min-width: 44px;
   color: var(--blue);
   font-size: 14px;
   font-weight: 600;
+  overflow-wrap: anywhere;
 }
 .page-index a:hover {
   text-decoration: underline;
@@ -1450,6 +1458,24 @@ textarea:focus-visible {
 .form-field textarea {
   resize: vertical;
 }
+.select-control {
+  position: relative;
+}
+.form-field select {
+  appearance: none;
+  height: calc(1.75em + 26px);
+  padding-right: 42px;
+}
+.select-control > .icon {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  color: var(--muted);
+  transform: translateY(-50%) rotate(90deg);
+  pointer-events: none;
+}
 .form-field p,
 .form-note,
 .inline-note {
@@ -1537,7 +1563,7 @@ textarea:focus-visible {
   }
   .academic-timeline li,
   .workflow-list li {
-    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-columns: minmax(48px, max-content) minmax(0, 1fr);
     gap: 16px;
   }
   .technology-table thead {
@@ -1710,9 +1736,18 @@ svg.brand-icon {
     display: flex;
   }
   .navigation > a {
-    padding: 14px 0;
+    padding: 12px 14px;
     min-height: 48px;
     font-size: 15px;
+    border-radius: 8px;
+    margin-block: 2px;
+  }
+  .navigation > a[aria-current="page"]:not(.nav-contact) {
+    background: #edf2fc;
+    box-shadow: inset 3px 0 currentColor;
+  }
+  .navigation > a:focus-visible {
+    outline-offset: 2px;
   }
   .navigation .nav-contact {
     margin: 10px 0 0;
@@ -2025,6 +2060,57 @@ svg.brand-icon {
   .contact-copy .button {
     width: 100%;
   }
+  .page-index > span {
+    margin-bottom: 10px;
+  }
+  .page-index > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .page-index a {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--pale);
+    line-height: 1.5;
+    min-width: 0;
+  }
+  .page-index a:focus-visible {
+    outline-offset: 2px;
+  }
+  .editorial-grid,
+  .directory-grid,
+  .scholarly-grid {
+    gap: 14px;
+  }
+  .reading-grid {
+    gap: 20px;
+  }
+  .editorial-card,
+  .directory-link,
+  .scholarly-link,
+  .context-panel,
+  .publication-record,
+  .collaboration-band,
+  .brief-panel {
+    padding: 18px;
+  }
+  .directory-link {
+    gap: 12px;
+  }
+  .card-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 12px;
+  }
+  .card-icon .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .education-card {
+    padding-inline: 20px;
+  }
   .footer-inner {
     gap: 16px;
     padding-block: 28px;
@@ -2050,6 +2136,12 @@ svg.brand-icon {
   }
   .publication h2 {
     font-size: 19px;
+  }
+}
+@media (hover: none) {
+  .button:hover,
+  .softklinik-preview:hover {
+    transform: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {
