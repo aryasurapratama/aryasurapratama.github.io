@@ -1,15 +1,13 @@
-.project-detail,
-.contact-links button {
+#copy-phone {
   display: none;
 }
-
-@media (max-width: 620px) {
+@media (max-width: 860px) {
   .header-inner {
     height: auto;
-    min-height: 74px;
+    min-height: 76px;
     flex-wrap: wrap;
     padding-block: 18px;
-    gap: 18px;
+    gap: 17px;
   }
   .menu-toggle {
     display: none;
@@ -21,8 +19,9 @@
     flex-wrap: wrap;
     padding: 0;
     border: 0;
-    gap: 18px;
+    gap: 17px;
     width: 100%;
+    box-shadow: none;
   }
   .navigation > a {
     padding: 0;
@@ -31,7 +30,8 @@
   .navigation .nav-contact {
     padding: 0;
     margin: 0;
-    border: 0;
-    gap: 10px;
+    background: none;
+    color: var(--blue);
+    gap: 8px;
   }
 }

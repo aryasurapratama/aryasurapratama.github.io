@@ -1,8 +1,8 @@
 {
   "name": "aryasurapratama.github.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Portofolio Arya Sura Pratama — dosen dan pengembang web/software.",
+  "description": "Profil Arya Sura Pratama, M.Kom. — dosen tetap dan Founder & Technology Lead SoftKlinik.",
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.mjs",
