@@ -6,7 +6,9 @@ Situs: **https://aryasurapratama.github.io/**.
 
 Bahasa Indonesia tersedia di `/`, dan English di `/en/`. Tombol bahasa di header memakai ikon bendera SVG dari flag-icons: Indonesia untuk beralih ke Bahasa Indonesia, dan United Kingdom untuk beralih ke English. Label EN/ID tetap tersedia bagi pembaca layar. Pergantian bahasa mempertahankan bagian yang sedang dibuka. Kedua halaman berisi konten lengkap tanpa JavaScript, dengan `lang`, canonical, metadata, dan tautan `hreflang` masing-masing. Nama pribadi, gelar resmi, dan nama institusi tetap dipertahankan.
 
-Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan tombol salin nomor kontak bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
+Desain akademik dengan warna putih, navy, dan biru. Memuat profil akademik, pendidikan S1–S2, publikasi pilihan, tesis, SoftKlinik, Google Scholar, SINTA, ORCID, GitHub, Instagram, serta kontak WhatsApp. Navigasi responsif dan penanda bagian aktif bekerja dengan JavaScript; konten utama tetap tersedia tanpa JavaScript.
+
+Nama lengkap tampil pada judul utama dan copyright. Blok logo/nama yang berulang serta label pembuka di atas judul telah dihapus. WhatsApp, Instagram, dan GitHub memakai format baris kontak yang sama. Tombol kembali ke atas berupa ikon mengambang di kanan bawah, muncul setelah halaman digulir 300px, dan mengembalikan fokus ke judul utama saat digunakan. Tanpa JavaScript, tautan ikon tetap tersedia.
 
 Tipografi isi 16px, tombol minimal 48px, dan kontrol sentuh minimal 44px. Layout menyesuaikan lebar layar tanpa mengecilkan teks isi. Navigasi mendukung keyboard, penanda bagian aktif, dan menu yang dapat digulir pada layar landscape. Ringkasan audit tersedia di [UI_UX_AUDIT.md](UI_UX_AUDIT.md).
 
@@ -48,7 +50,7 @@ Pantau hasil di tab Actions repositori. Nama repositori harus tetap `aryasurapra
 - `index.html`: profil, pendidikan, publikasi, SoftKlinik, kontak, dan metadata SEO.
 - `en/index.html`: versi English; perbarui kedua halaman jika isi profil berubah.
 - `assets/style.css`: tampilan desktop, tablet, dan seluler.
-- `assets/main.js`: menu, penanda navigasi aktif, dan salin nomor WhatsApp.
+- `assets/main.js`: menu, penanda navigasi aktif, pergantian bahasa, dan ikon kembali ke atas.
 - `assets/profile.jpg`: foto formal terbaru yang diberikan oleh pemilik, disiapkan untuk web.
 - `assets/softklinik-preview.png`: tangkapan layar website resmi SoftKlinik.
 - `assets/icons/`: ikon asli merek, sprite SVG antarmuka, sumber, dan lisensi.

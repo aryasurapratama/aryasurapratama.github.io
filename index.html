@@ -51,9 +51,9 @@
     />
     <link rel="preload" href="assets/profile.jpg?v=3" as="image" />
     <link rel="stylesheet" href="assets/fonts.css" />
-    <link rel="stylesheet" href="assets/style.css?v=8" />
-    <noscript><link rel="stylesheet" href="assets/no-js.css?v=4" /></noscript>
-    <script src="assets/main.js?v=4" defer></script>
+    <link rel="stylesheet" href="assets/style.css?v=9" />
+    <noscript><link rel="stylesheet" href="assets/no-js.css?v=5" /></noscript>
+    <script src="assets/main.js?v=5" defer></script>
     <title>Arya Sura Pratama, M.Kom. | Dosen & Technology Lead</title>
     <script type="application/ld+json">
       {
@@ -106,15 +106,6 @@
     <a class="skip-link" href="#main">Langsung ke konten</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a
-          class="brand"
-          href="#beranda"
-          aria-label="Arya Sura Pratama, M.Kom., beranda"
-          ><span class="brand-mark">a<span>.</span></span
-          ><span class="brand-name"
-            >Arya Sura Pratama,&nbsp;M.Kom.<span>DOSEN & PENGEMBANG</span></span
-          ></a
-        >
         <nav id="navigation" class="navigation" aria-label="Navigasi utama">
           <a href="#profil">Profil</a><a href="#pendidikan">Pendidikan</a
           ><a href="#penelitian">Penelitian</a><a href="#karya">Karya</a
@@ -159,10 +150,6 @@
     <main id="main" tabindex="-1">
       <section id="beranda" class="hero container" aria-labelledby="hero-title">
         <div class="hero-copy">
-          <p class="eyebrow">
-            <span class="eyebrow-line"></span> DOSEN TETAP · PENGEMBANG ·
-            FOUNDER
-          </p>
           <h1 id="hero-title">Arya Sura Pratama,&nbsp;M.Kom.</h1>
           <p class="hero-lead">Pendidikan & teknologi.</p>
           <p class="hero-description">
@@ -584,28 +571,21 @@
             >
           </div>
           <div class="contact-details">
-            <div class="phone-row">
-              <div>
-                <span>WHATSAPP</span
-                ><a
-                  href="https://wa.me/6282232623434"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >0822 3262 3434<span class="visually-hidden">
-                    (tab baru)</span
-                  ></a
-                >
-              </div>
-              <button
-                id="copy-phone"
-                type="button"
-                aria-label="Salin nomor WhatsApp"
-              >
-                <svg class="icon" aria-hidden="true">
-                  <use href="assets/icons/ui.svg#icon-copy" />
-                </svg>
-              </button>
-            </div>
+            <a
+              class="contact-link"
+              href="https://wa.me/6282232623434"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon brand-icon" aria-hidden="true">
+                <use href="assets/icons/brands.svg#icon-whatsapp" />
+              </svg>
+              <span><small>WHATSAPP</small>0822 3262 3434</span>
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons/ui.svg#icon-arrow" />
+              </svg>
+              <span class="visually-hidden"> (tab baru)</span>
+            </a>
             <a
               class="contact-link"
               href="https://www.instagram.com/aryasurapratama/"
@@ -635,20 +615,18 @@
     </main>
     <footer class="site-footer">
       <div class="container footer-inner">
-        <a class="brand" href="#beranda" aria-label="Kembali ke beranda"
-          ><span class="brand-mark">a<span>.</span></span
-          ><span class="brand-name"
-            >Arya Sura Pratama,&nbsp;M.Kom.<span>DOSEN & PENGEMBANG</span></span
-          ></a
-        >
         <p>© <span id="year">2026</span> Arya Sura Pratama, M.Kom.</p>
-        <a class="back-top" href="#beranda"
-          >Kembali ke atas
-          <svg class="icon" aria-hidden="true">
-            <use href="assets/icons/ui.svg#icon-arrow" /></svg
-        ></a>
       </div>
     </footer>
-    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <a
+      class="back-top"
+      href="#beranda"
+      aria-label="Kembali ke atas"
+      title="Kembali ke atas"
+    >
+      <svg class="icon" aria-hidden="true">
+        <use href="assets/icons/ui.svg#icon-right" />
+      </svg>
+    </a>
   </body>
 </html>

@@ -7,14 +7,10 @@ const messages = english
   ? {
       openMenu: "Open navigation",
       closeMenu: "Close navigation",
-      copied: "WhatsApp number copied.",
-      phone: "WhatsApp number: 0822 3262 3434",
     }
   : {
       openMenu: "Buka navigasi",
       closeMenu: "Tutup navigasi",
-      copied: "Nomor WhatsApp berhasil disalin.",
-      phone: "Nomor WhatsApp: 0822 3262 3434",
     };
 let focusedNavigationLink;
 
@@ -82,9 +78,19 @@ desktopNavigation.addEventListener("change", () => {
 
 const sections = [...document.querySelectorAll("main section[id]")];
 const navigationLinks = [...navigation.querySelectorAll("a")];
+const backTop = document.querySelector(".back-top");
+backTop.addEventListener("click", (event) => {
+  if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+  closeMenu();
+  const heading = document.querySelector("#hero-title");
+  heading.setAttribute("tabindex", "-1");
+  requestAnimationFrame(() => heading.focus({ preventScroll: true }));
+});
+backTop.addEventListener("blur", scheduleNavigationUpdate);
 let navigationFrame;
 function updateActiveSection() {
   navigationFrame = null;
+  backTop.hidden = window.scrollY < 300 && document.activeElement !== backTop;
   const marker = header.getBoundingClientRect().height + 32;
   let activeSection = sections[0];
   for (const section of sections) {
@@ -119,22 +125,3 @@ document.querySelector("#year").textContent = new Intl.DateTimeFormat("en", {
   year: "numeric",
   timeZone: "Asia/Jakarta",
 }).format(new Date());
-let toastTimer;
-function showToast(message) {
-  const toast = document.querySelector("#toast");
-  clearTimeout(toastTimer);
-  toast.textContent = message;
-  toast.classList.add("visible");
-  toastTimer = setTimeout(() => toast.classList.remove("visible"), 4500);
-}
-
-document.querySelector("#copy-phone").addEventListener("click", async () => {
-  try {
-    if (!navigator.clipboard?.writeText)
-      throw new Error("Clipboard unavailable");
-    await navigator.clipboard.writeText("082232623434");
-    showToast(messages.copied);
-  } catch {
-    showToast(messages.phone);
-  }
-});

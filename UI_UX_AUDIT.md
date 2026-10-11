@@ -55,3 +55,14 @@ Ikon SVG yang terlihat diperiksa agar benar-benar dirender, termasuk ikon penutu
 Playwright/Chromium menguji setiap bahasa pada 320, 390, 620, 768, 860, 1024, 1025, 1440, dan 1920 piksel. Tidak ada scroll horizontal, teks utama terpotong, atau header bertumpuk. Semua lima tujuan navigasi, fokus keyboard, pergantian bahasa dua arah, salin nomor beserta pesan cadangan, dan menu landscape lulus.
 
 Pemeriksaan axe pada 320, 1025, dan 1440 piksel di masing-masing bahasa tidak menemukan pelanggaran pada aturan yang diuji. Pembesaran teks isi dan penyesuaian jarak teks diperiksa pada 390 piksel. Kedua bahasa tanpa JavaScript lulus pada 320, 390, 1024, dan 1440 piksel. Halaman 404 dan respons 404 bawaan GitHub Pages untuk URL English juga diperiksa. Tidak ditemukan galat JavaScript atau kegagalan pemuatan aset.
+
+## Penyederhanaan header, kontak, dan footer
+
+- Blok logo/nama yang berulang dan label pembuka di atas judul dihapus pada kedua bahasa. Nama lengkap tetap tampil pada judul utama dan copyright. Header dipadatkan menjadi 64px; jarak tujuan navigasi dan tinggi menu disesuaikan agar konten tetap terlihat di bawah header.
+- WhatsApp, Instagram, dan GitHub memakai kelas baris kontak yang sama: ikon merek, label, nilai kontak 16px, dan panah. Ukuran teks, jarak, dan posisi ikon ketiganya konsisten. Panel nomor besar dan tombol salin nomor dihapus.
+- Kembali ke atas menjadi ikon panah mengambang 48px di kanan bawah. Ikon muncul setelah halaman digulir 300px, kembali ke bagian awal, dan memindahkan fokus keyboard ke nama utama. Tanpa JavaScript, tautan ikon tetap tersedia.
+- Teks dan panah tombol biru tampil putih pada pemeriksaan Chromium. Tampilan kosong pada gambar yang diberikan belum berhasil direproduksi; tidak ada klaim bahwa penyebabnya telah diketahui.
+
+Kedua bahasa diuji pada lebar 320, 390, 620, 768, 800, 860, 1024, 1025, 1440, dan 1920px. Layout, semua tujuan navigasi, fokus, target sentuh, keseragaman kontak, tampilan tombol utama, serta ikon kembali ke atas diperiksa. Pengujian tambahan mencakup pergantian bahasa, menu landscape, pembesaran teks, kedua halaman 404, dan navigasi tanpa JavaScript.
+
+Pemeriksaan axe pada 320, 1025, dan 1440px di masing-masing bahasa tidak menemukan pelanggaran pada aturan yang diuji. Pemeriksaan visual dilakukan pada desktop dan ponsel. Verifikasi browser ini memakai Chromium, bukan seluruh browser atau perangkat.
