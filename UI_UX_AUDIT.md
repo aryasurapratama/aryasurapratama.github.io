@@ -141,3 +141,9 @@ Tinggi halaman Indonesia pada viewport 390 × 844px, diukur di Chromium:
 | Kontak     | 3880px  | 3120px  | 20%          |
 
 Setelah pemadatan, seluruh 12 halaman diuji di Chromium dan WebKit pada 320, 360, 375, 390, 414, 430, 620, 768, 1024, dan 1440px: 240 pemeriksaan layout dan 48 pemindaian axe lulus. Navigasi sentuh/keyboard, tautan daftar isi, menu landscape, formulir dan FAQ, pembesaran teks 200%, pengaturan jarak teks, serta 24 halaman tanpa JavaScript juga lulus. Penyesuaian akhir jarak beranda diperiksa lagi di kedua mesin browser. Screenshot beranda, pendidikan, penelitian, karya, dan kontak ditinjau secara visual.
+
+## Nama beranda dalam satu baris — 12 Oktober 2026
+
+Atas permintaan pemilik, judul **Arya Sura Pratama, M.Kom.** menggunakan satu baris di kedua bahasa. Ukuran huruf menyesuaikan lebar kolom melalui container query units, dengan batas 20–54px; teks lengkap tetap tersedia tanpa pemotongan atau elipsis.
+
+Sebanyak 48 pemeriksaan judul di Chromium dan WebKit pada lebar 320, 360, 390, 430, 620, 768, 800, 860, 1024, 1025, 1440, dan 1920px memastikan satu baris, teks lengkap, serta tidak adanya scroll horizontal. Kedua mesin juga memeriksa halaman tanpa JavaScript pada 320px. Screenshot mobile dan desktop ditinjau. Pemeriksaan ini dilakukan pada ukuran teks normal; ketentuan satu baris menggantikan pembungkusan nama pada versi sebelumnya.

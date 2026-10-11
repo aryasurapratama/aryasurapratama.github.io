@@ -1618,6 +1618,14 @@ textarea:focus-visible {
 .contact-details {
   min-width: 0;
 }
+.hero-copy {
+  container-type: inline-size;
+}
+.hero #hero-title {
+  font-size: clamp(20px, 8.55cqi, 54px);
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
 .navigation .nav-contact.active {
   color: white;
   background: var(--blue);
